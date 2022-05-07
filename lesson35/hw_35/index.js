@@ -1,14 +1,4 @@
-interface Users {
-   name: string;
-   phone: string;
-   email: string;
-   animals?: string[];
-   cars?: string[];
-   hasChildren: boolean;
-   hasEducation: boolean;
-}
-
-const users: Users[] = [
+const users = [
    {
       name: "Harry Felton",
       phone: "(09) 897 33 33",
@@ -17,6 +7,7 @@ const users: Users[] = [
       cars: ["bmw"],
       hasChildren: false,
       hasEducation: true
+
    },
    {
       name: "May Sender",
@@ -37,19 +28,19 @@ const users: Users[] = [
 
 //task1 - Создать строку из имен пользователей через запятую
 
-const stringOfName: string = users.map(user => user.name).join(", ")
+const stringOfName = users.map(user => user.name).join(", ")
 console.log(stringOfName)
 
 //task2 - Посчитать общее количество машин у пользователей
 
-const arrData: any[] = users.map(user => user.cars)
-const ArrayOfCars: never[] = [].concat.apply([], arrData)
-const checkArrayOfCars: number = ArrayOfCars.filter((cars: any) => cars != null).length
+const arrData = users.map(user => user.cars)
+const ArrayOfCars = [].concat.apply([], arrData)
+const checkArrayOfCars = ArrayOfCars.filter(cars => cars != null).length
 console.log(`Amount of cars: ${checkArrayOfCars}`)
 
 //task3 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
 
-function isHasEducation(arr: any[]): any {
+function isHasEducation(arr) {
    const arrDataUsers = arr.map(user => user.hasEducation).filter(user => user === true)
    return arrDataUsers
 }
@@ -57,7 +48,7 @@ console.log(isHasEducation(users))
 
 //task4 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие животных
 
-function isHasAnimals(arr: any[]): any {
+function isHasAnimals(arr) {
    const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
    return arrDataUsers
 }
@@ -65,7 +56,7 @@ console.log(isHasAnimals(users))
 
 //task5 - Создать функцию, которая бы принимала массив пользователей и отдавала бы строку с названиями марок автомобилей через запятую
 
-function backUsersCars(arr: any[]): string {
+function backUsersCars(arr) {
    const usersCars = arr.map(user => user.cars).filter(user => user != null).join()
    return usersCars
 }
