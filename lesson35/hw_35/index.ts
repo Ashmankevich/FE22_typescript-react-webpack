@@ -2,13 +2,13 @@ interface Users {
    name: string;
    phone: string;
    email: string;
-   animals?: string[];
-   cars?: string[];
+   animals: string[];
+   cars: string[];
    hasChildren: boolean;
    hasEducation: boolean;
 }
 
-const users: Users[] = [
+const users: Partial<Users>[] = [
    {
       name: "Harry Felton",
       phone: "(09) 897 33 33",
@@ -43,13 +43,13 @@ console.log(stringOfName)
 //task2 - Посчитать общее количество машин у пользователей
 
 const arrData: any[] = users.map(user => user.cars)
-const ArrayOfCars: never[] = [].concat.apply([], arrData)
-const checkArrayOfCars: number = ArrayOfCars.filter((cars: any) => cars != null).length
+const ArrayOfCars = [].concat.apply([], arrData)
+const checkArrayOfCars: number = ArrayOfCars.filter(cars => cars != null).length
 console.log(`Amount of cars: ${checkArrayOfCars}`)
 
 //task3 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
 
-function isHasEducation(arr: any[]): any {
+function isHasEducation(arr: Users[]): boolean[] {
    const arrDataUsers = arr.map(user => user.hasEducation).filter(user => user === true)
    return arrDataUsers
 }
@@ -57,15 +57,22 @@ console.log(isHasEducation(users))
 
 //task4 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие животных
 
-function isHasAnimals(arr: any[]): any {
+function isHasAnimals(arr: Users[]): any {
    const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
    return arrDataUsers
 }
 console.log(isHasAnimals(users))
 
+/*test
+function isHasAnimals1<Users>(arr: Users[]): Users | undefined {
+   const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
+   return arrDataUsers
+}
+console.log(isHasAnimals1(users))*/
+
 //task5 - Создать функцию, которая бы принимала массив пользователей и отдавала бы строку с названиями марок автомобилей через запятую
 
-function backUsersCars(arr: any[]): string {
+function backUsersCars(arr: Users[]): string {
    const usersCars = arr.map(user => user.cars).filter(user => user != null).join()
    return usersCars
 }
