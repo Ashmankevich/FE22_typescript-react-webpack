@@ -49,7 +49,7 @@ console.log(`Amount of cars: ${checkArrayOfCars}`)
 
 //task3 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
 
-function isHasEducation(arr: Users[]): boolean[] {
+function isHasEducation(arr: Partial<Users>[]): (boolean | undefined)[] {
    const arrDataUsers = arr.map(user => user.hasEducation).filter(user => user === true)
    return arrDataUsers
 }
@@ -57,22 +57,15 @@ console.log(isHasEducation(users))
 
 //task4 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие животных
 
-function isHasAnimals(arr: Users[]): any {
+function isHasAnimals(arr: Partial<Users>[]): any {
    const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
    return arrDataUsers
 }
 console.log(isHasAnimals(users))
 
-/*test
-function isHasAnimals1<Users>(arr: Users[]): Users | undefined {
-   const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
-   return arrDataUsers
-}
-console.log(isHasAnimals1(users))*/
-
 //task5 - Создать функцию, которая бы принимала массив пользователей и отдавала бы строку с названиями марок автомобилей через запятую
 
-function backUsersCars(arr: Users[]): string {
+function backUsersCars(arr: Partial<Users>[]): string {
    const usersCars = arr.map(user => user.cars).filter(user => user != null).join()
    return usersCars
 }
