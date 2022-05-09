@@ -110,7 +110,7 @@ type Properties = {
    year: number,
    released: string,
    runtime: string,
-   genre: string[],
+   genre: Genre[],
    director: string,
    writer: string,
    actors: string[],
@@ -123,6 +123,8 @@ type Properties = {
    boxOffice: string,
    production: string
 }
+
+type Genre = "Action" | "Sci-Fi" | "Adventure" | "Drama" | "Fantasy"
 
 const moviesInfo: Properties[] = [
    {

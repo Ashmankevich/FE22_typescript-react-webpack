@@ -66,3 +66,24 @@ arrTask5.sort(function (a, b) {
 })
 
 console.log("sorting by the number of teachers from a large to a smaller number:", arrTask5)
+
+//5.1 improve solution, in process
+const arr = Object.entries(subjects).map(([key, v]) => ({ ...v, key }));
+const initial = Object.fromEntries(arr.map(({ key, ...v }) => [key, v]));
+
+let arrForSort = []
+for (let key in initial) {
+   arrForSort.push([key, initial[key]])
+}
+
+arrForSort.sort(function (a, b) {
+   if (a.teachers < b.teachers) {
+      return 1
+   }
+   if (a.teachers > b.teachers) {
+      return -1
+   }
+
+   return 0
+})
+console.log(arrForSort)
