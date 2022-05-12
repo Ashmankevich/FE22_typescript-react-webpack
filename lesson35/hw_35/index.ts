@@ -49,20 +49,17 @@ console.log(`Amount of cars: ${checkArrayOfCars}`)
 
 //task3 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
 
-/*function isHasEducation(arr: Partial<Users>[]) {
-
-   for (let [key, value] of Object.entries(arr)) {
-      if () {
-         
-      }
-   }
+function isHasEducation(arr: Partial<Users>[]) {
+   const arrDataUsers = arr.filter(user => user.hasEducation != true)
+   return arrDataUsers
 }
-console.log(isHasEducation(users))*/
+console.log(isHasEducation(users))
+
 
 //task4 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие животных
 
 function isHasAnimals(arr: Partial<Users>[]) {
-   const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
+   const arrDataUsers = arr.filter(user => user.animals != null)
    return arrDataUsers
 }
 console.log(isHasAnimals(users))

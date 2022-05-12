@@ -41,7 +41,7 @@ console.log(`Amount of cars: ${checkArrayOfCars}`)
 //task3 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
 
 function isHasEducation(arr) {
-   const arrDataUsers = arr.map(user => user.hasEducation).filter(user => user === true)
+   const arrDataUsers = arr.filter(user => user.hasEducation === true)
    return arrDataUsers
 }
 console.log(isHasEducation(users))
@@ -49,7 +49,7 @@ console.log(isHasEducation(users))
 //task4 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие животных
 
 function isHasAnimals(arr) {
-   const arrDataUsers = arr.map(user => user.animals).filter(user => user != null)
+   const arrDataUsers = arr.filter(user => user.animals != null)
    return arrDataUsers
 }
 console.log(isHasAnimals(users))
