@@ -127,12 +127,20 @@ const uniqActors = Array.from(new Set(arrActors))
 
 //task 3 - Отсортировать фильмы по рейтингу по убыванию
 
-users.sort((a, b) => a.imdbRating > b.imdbRating ? 1 : -1)
-console.log(users)
+const arrSortByRating = users.sort((a, b) => a.imdbRating > b.imdbRating ? -1 : 1)
 
 //task 4 - Создать новый массив, где объекты фильмов будут состоять из следующих полей: id, title, released, plot
 
-
+const newUsers = users.map(item => {
+   const obj = {
+      id: item.id,
+      title: item.title,
+      released: item.released,
+      plot: item.plot
+   }
+   return obj
+})
+console.log(newUsers)
 
 //task 5 - Создать функцию, которая бы принимала массив фильмов и число.
 //А результатом этой функции должен быть отфильтрованный массив, с фильмами где число равно году выхода фильма.
