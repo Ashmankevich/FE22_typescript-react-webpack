@@ -41,7 +41,7 @@ console.log(`Amount of cars: ${checkArrayOfCars}`)
 //task3 - Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
 
 function isHasEducation(arr) {
-   const arrDataUsers = arr.filter(user => user.hasEducation === true)
+   const arrDataUsers = arr.filter(user => user.hasEducation = true)
    return arrDataUsers
 }
 console.log(isHasEducation(users))
