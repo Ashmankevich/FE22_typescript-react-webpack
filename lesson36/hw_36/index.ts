@@ -1,4 +1,26 @@
-const users = [
+interface Users {
+   id: number;
+   title: string;
+   year: number;
+   released: string;
+   runtime: string;
+   director: string;
+   genre: Genre[];
+   writer: string;
+   actors: string[];
+   plot: string;
+   country: string;
+   poster: string;
+   imdbRating: number;
+   imdbVotes: number;
+   type: string;
+   boxOffice: string;
+   production: string;
+}
+
+type Genre = 'Action' | 'Sci-Fi' | 'Adventure' | 'Drama' | 'Fantasy' | 'Family';
+
+const users: Partial<Users>[] = [
    {
       id: 1,
       title: "Black Widow",
@@ -75,7 +97,6 @@ const users = [
       production: "Heyday Films, Warner Bros.",
    },
    {
-      id: 5,
       title: "Harry Potter and the Sorcerer's Stone",
       year: 2001,
       released: "16 Nov 2001",
@@ -93,3 +114,38 @@ const users = [
       production: "1492 Pictures, Heyday Films, Warner Brothers",
    }
 ]
+
+//task 1 - Собрать в массив все жанры фильмов (без повторения)
+
+const arrGenry = users.map(item => item.genre).flat()
+const uniqGenry = Array.from(new Set(arrGenry))
+
+//task 2 - Собрать в массив всех актеров всех фильмов (без повторения)
+
+const arrActors = users.map(item => item.actors).flat()
+const uniqActors = Array.from(new Set(arrActors))
+
+//task 3 - Отсортировать фильмы по рейтингу по убыванию
+
+users.sort((a, b) => a.imdbRating > b.imdbRating ? 1 : -1)
+console.log(users)
+
+//task 4 - Создать новый массив, где объекты фильмов будут состоять из следующих полей: id, title, released, plot
+
+
+
+//task 5 - Создать функцию, которая бы принимала массив фильмов и число.
+//А результатом этой функции должен быть отфильтрованный массив, с фильмами где число равно году выхода фильма.
+//task 6 - Создать функцию, которая бы принимала массив фильмов и строку.
+//А результатом этой функции должен быть новый отфильтрованный массив, с фильмами,
+// где строка входит в название фильма.
+//task 7 - Создать функцию, которая бы принимала массив фильмов и строку.
+//А результатом этой функции должен быть отфильтрованный массив, с фильмами,
+// где строка входит в название фильма или в его сюжет.
+//task 8 - Создать функцию, которая бы принимала 3 параметра:
+// 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow").
+// А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма.
+
+
+
+//don't use methods "for & forEach"
