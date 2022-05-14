@@ -1,19 +1,24 @@
-.App {
+.app {
+  height: 100vh;
   text-align: center;
+  background-image: url("../src/cover/Cover1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.App-logo {
+/*.app-cover {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .app-cover {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.app-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -36,3 +41,4 @@
     transform: rotate(360deg);
   }
 }
+*/
