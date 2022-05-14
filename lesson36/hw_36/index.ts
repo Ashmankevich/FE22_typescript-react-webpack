@@ -140,20 +140,32 @@ const newUsers = users.map(item => {
    }
    return obj
 })
-console.log(newUsers)
 
 //task 5 - Создать функцию, которая бы принимала массив фильмов и число.
 //А результатом этой функции должен быть отфильтрованный массив, с фильмами где число равно году выхода фильма.
+
+function getFilterUsersByYear(arr: Partial<Users>[], year: number) {
+   const newArr = arr.filter(item => item.year === year)
+   return newArr
+}
+getFilterUsersByYear(users, 2001)
+
 //task 6 - Создать функцию, которая бы принимала массив фильмов и строку.
 //А результатом этой функции должен быть новый отфильтрованный массив, с фильмами,
 // где строка входит в название фильма.
+
+function checkWordInTitle(arr: Partial<Users>[], word: string) {
+   const newArr = arr.filter(item => item.title.split(' '))
+   return newArr
+}
+checkWordInTitle(users, "window")
+
 //task 7 - Создать функцию, которая бы принимала массив фильмов и строку.
 //А результатом этой функции должен быть отфильтрованный массив, с фильмами,
 // где строка входит в название фильма или в его сюжет.
+
+
+
 //task 8 - Создать функцию, которая бы принимала 3 параметра:
 // 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow").
 // А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма.
-
-
-
-//don't use methods "for & forEach"
