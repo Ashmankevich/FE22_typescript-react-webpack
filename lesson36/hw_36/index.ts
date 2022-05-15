@@ -1,4 +1,4 @@
-interface Users {
+interface Film {
    id: number;
    title: string;
    year: number;
@@ -20,7 +20,7 @@ interface Users {
 
 type Genre = 'Action' | 'Sci-Fi' | 'Adventure' | 'Drama' | 'Fantasy' | 'Family';
 
-const users: Partial<Users>[] = [
+const users: Partial<Film>[] = [
    {
       id: 1,
       title: "Black Widow",
@@ -146,7 +146,7 @@ const newUsers = users.map(item => {
 //task 5 - Создать функцию, которая бы принимала массив фильмов и число.
 //А результатом этой функции должен быть отфильтрованный массив, с фильмами где число равно году выхода фильма.
 
-function getFilterUsersByYear(arr: Partial<Users>[], year: number) {
+function getFilterUsersByYear(arr: Partial<Film>[], year: number) {
    const newArr = arr.filter(item => item.year === year)
    return newArr
 }
@@ -156,7 +156,7 @@ getFilterUsersByYear(users, 2001)
 //А результатом этой функции должен быть новый отфильтрованный массив, с фильмами,
 // где строка входит в название фильма.
 
-function checkTitle(arr: Partial<Users>[], word: string) {
+function checkTitle(arr: Partial<Film>[], word: string) {
 
    return arr.filter(item => item.title?.toLowerCase().includes(word.toLowerCase()));
 
@@ -167,7 +167,7 @@ checkTitle(users, "widow")
 //А результатом этой функции должен быть отфильтрованный массив, с фильмами,
 // где строка входит в название фильма или в его сюжет.
 
-function checkTitleOrPlot(arr: Partial<Users>[], word: string) {
+function checkTitleOrPlot(arr: Partial<Film>[], word: string) {
    
    return arr.filter(item => 
    item.title?.toLowerCase().includes(word.toLowerCase()) 
@@ -179,3 +179,16 @@ checkTitleOrPlot(users, "enrolls")
 //task 8 - Создать функцию, которая бы принимала 3 параметра:
 // 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow").
 // А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма.
+
+function getFilterUsers(arr: Partial<Film>[], director: string, production: string) {
+
+   return arr.filter(item => {
+      return item.director?.toLowerCase()
+      .includes(director.toLowerCase()) 
+      && 
+      (item.production?.toLowerCase() === production.toLowerCase() 
+      || item.production?.toLowerCase().includes(production.toLowerCase()));
+   })
+
+}
+getFilterUsers(users, 'columbus', 'warner')
