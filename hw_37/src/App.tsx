@@ -1,19 +1,31 @@
 import React from 'react';
 import './App.css';
-import { Button } from './button/Button';
-import { Header } from './header/Header';
+import { Button } from './components/button/Button';
+import { Header } from './components/header/Header';
+import { Description } from './components/description/Description';
 
 function App() {
   return (
     <div className="app">
-      <Header>Make your Blog Online</Header>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
-        consequuntur inventore? Voluptates ea consequatur sunt unde ipsa.
-        Quisquam doloremque maiores, natus minus deserunt ipsa sunt assumenda ad
-        aspernatur eos quas cum repudiandae saepe possimus.
-      </p>
-      <Button>Learn more</Button>
+      <div className="container">
+        <div className="main-page">
+          <Header>
+            Make your Blog{' '}
+            <span>
+              <a className="main-link" href="#">
+                Online
+              </a>
+            </span>
+          </Header>
+          <Description>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+            consequuntur inventore? Voluptates ea consequatur sunt unde ipsa.
+            Quisquam doloremque maiores, natus minus deserunt ipsa sunt
+            assumenda ad aspernatur eos quas cum repudiandae saepe possimus.
+          </Description>
+          <Button>Learn more</Button>
+        </div>
+      </div>
     </div>
   );
 }
