@@ -3,6 +3,7 @@ import './App.css';
 import { Button } from './components/button/Button';
 import { Header } from './components/header/Header';
 import { Description } from './components/description/Description';
+import { Form } from './components/form/Form';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             assumenda ad aspernatur eos quas cum repudiandae saepe possimus.
           </Description>
           <Button>Learn more</Button>
+        </div>
+        <div className="form">
+          <Form></Form>
         </div>
       </div>
     </div>

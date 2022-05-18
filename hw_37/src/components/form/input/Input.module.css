@@ -1,0 +1,17 @@
+.input {
+   display: block;
+   max-width: 250px;
+   width: 100%;
+   border: none;
+   border-bottom: 1px solid #bdbdbd;
+   border-radius: 15px;
+   padding: 9px 0 9px;
+   outline: none;
+}
+
+.label {
+   font-size: 14px;
+   line-height: 19px;
+   text-align: left;
+   margin-bottom: 15px;
+}
