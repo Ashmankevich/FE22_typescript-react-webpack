@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Button } from './components/button/Button';
+import { Button } from './ui/button/Button';
 import { Header } from './components/header/Header';
 import { Description } from './components/description/Description';
 import { Form } from './components/form/Form';
