@@ -180,7 +180,19 @@ checkTitleOrPlot(users, "enrolls")
 // 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow").
 // А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма.
 
-function getFilterUsers(arr: Partial<Film>[], director: string, production: string) {
+function getFilterUsers(arr: Partial<Film>[], field: keyof Film, value: string | number) {
+
+   return arr.filter(item => {
+      return item.hasOwnProperty(field)
+      && item[field] === value;
+   })
+
+}
+getFilterUsers(users, 'writer', 'George Lucas')
+
+
+// below is a solution slightly different from the original condition
+/*function getFilterUsers(arr: Partial<Film>[], director: string, production: string) {
 
    return arr.filter(item => {
       return item.director?.toLowerCase()
@@ -191,4 +203,4 @@ function getFilterUsers(arr: Partial<Film>[], director: string, production: stri
    })
 
 }
-getFilterUsers(users, 'columbus', 'warner')
+getFilterUsers(users, 'columbus', 'warner')*/
