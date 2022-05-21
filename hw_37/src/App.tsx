@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import { Button } from './ui/button/Button';
-import { Header } from './components/header/Header';
-import { Description } from './components/description/Description';
-import { Form } from './components/form/Form';
+import { Header } from './features/header/Header';
+import { Description } from './ui/description/Description';
+import { Login } from './ui/form/Login';
+import { Registration } from './ui/form/Registration';
 
 function App() {
   return (
@@ -27,7 +28,12 @@ function App() {
           <Button>Learn more</Button>
         </div>
         <div className="form">
-          <Form></Form>
+          <div className="item">
+            <Login></Login>
+          </div>
+          <div className="item">
+            <Registration></Registration>
+          </div>
         </div>
       </div>
     </div>

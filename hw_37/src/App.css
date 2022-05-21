@@ -1,5 +1,5 @@
 .app {
-  background-image: url("../src/components/cover/Cover1.jpg");
+  background-image: url("../src/ui/cover/Cover1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -24,6 +24,14 @@
 .main-link {
    text-decoration: none;
    color: #ec7979;
+}
+
+.form {
+   display: flex;
+}
+
+.item {
+   align-self: flex-start;
 }
 
 /*.app-cover {

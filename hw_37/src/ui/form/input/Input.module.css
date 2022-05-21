@@ -1,17 +1,15 @@
-.input {
+.input_form {
    display: block;
-   max-width: 250px;
-   width: 100%;
-   border: none;
-   border-bottom: 1px solid #bdbdbd;
-   border-radius: 15px;
-   padding: 9px 0 9px;
+   width: 200px;
+   font-size: 14px;
+   border: 2px solid #ec7979;
+   border-radius: 20px;
+   padding: 12px;
    outline: none;
+   background-color: rgb(214, 197, 230);
+   margin: 10px 0 20px;
 }
 
 .label {
-   font-size: 14px;
-   line-height: 19px;
-   text-align: left;
-   margin-bottom: 15px;
+   font-size: 18px;
 }
