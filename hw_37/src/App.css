@@ -9,6 +9,57 @@
   height: 100vh;
 }
 
+.nav {
+   height: 50px;
+   width:100%;
+   position: fixed;
+   z-index:50;
+   background-color: grey;
+}
+
+.burger-btn {
+   z-index: 5;
+   cursor: pointer;
+   display: block;
+   position: fixed;
+   top: 27px;
+   left: 47px;
+   transition: all 0.5s ease-out 0s;
+}
+
+.burger-btn span {
+   background-color: blueviolet;
+   position: absolute;
+   width: 24px;
+   height: 3px;
+   top: 50%;
+   left: 50%;
+   transition: all 0.3s ease 0s;
+   transform: translate(-50%, -50%);
+}
+
+.burger-btn span::before {
+   content: "";
+   position: absolute;
+   width: 15px;
+   height: 3px;
+   bottom: 7.5px;
+   transition: all 0.3s ease 0s;
+   background-color: blueviolet;
+}
+
+.burger-btn span::after {
+   content: "";
+   position: absolute;
+   width: 24px;
+   height: 3px;
+   top: 7.5px;
+   transition: all 0.3s ease 0s;
+   background-color: blueviolet;
+}
+
+
+
 .container {
    display: flex;
    max-width: 1200px;

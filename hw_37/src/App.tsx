@@ -11,6 +11,11 @@ import { ContentMainPage } from './pages/content-main-page/ContentMainPage';
 function App() {
   return (
     <div className="app">
+      <nav>
+        <div className="burger-btn">
+          <span></span>
+        </div>
+      </nav>
       <div className="container">
         <div className="main-page">
           <Header>
@@ -28,16 +33,6 @@ function App() {
             assumenda ad aspernatur eos quas cum repudiandae saepe possimus.
           </Description>
           <Button>Learn more</Button>
-          <WelcomeTemplate></WelcomeTemplate>
-          <ContentMainPage></ContentMainPage>
-        </div>
-        <div className="form">
-          <div className="item">
-            <Login></Login>
-          </div>
-          <div className="item">
-            <Registration></Registration>
-          </div>
         </div>
       </div>
     </div>
