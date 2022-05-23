@@ -12,14 +12,14 @@ export const Login: React.FC = () => {
     <form>
       <HeaderForm>
         <span>
-          <a className="main-link" href="#">
+          <a className="main-link" href="Link">
             Login
           </a>
         </span>
       </HeaderForm>
       <HeaderForm>
         <span>
-          <a className="main-link" href="#">
+          <a className="main-link" href="Link">
             Registartion
           </a>
         </span>
@@ -36,7 +36,7 @@ export const Login: React.FC = () => {
       <Text>
         Forgot your password?{' '}
         <span>
-          <a className="main-link" href="#">
+          <a className="main-link" href="Link">
             Reset password
           </a>
         </span>

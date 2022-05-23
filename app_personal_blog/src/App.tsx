@@ -3,10 +3,10 @@ import './App.css';
 import { Button } from './ui/button/Button';
 import { Header } from './features/header/Header';
 import { Description } from './ui/description/Description';
-import { Login } from './ui/form/Login';
-import { Registration } from './ui/form/Registration';
-import { WelcomeTemplate } from './templates/welcome/WelomeTemplate';
-import { ContentMainPage } from './pages/content-main-page/ContentMainPage';
+//import { Login } from './ui/form/Login';
+//import { Registration } from './ui/form/Registration';
+//import { WelcomeTemplate } from './templates/welcome/WelomeTemplate';
+//import { ContentMainPage } from './pages/content-main-page/ContentMainPage';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Header>
             Make your Blog{' '}
             <span>
-              <a className="main-link" href="#">
+              <a className="main-link" href="Online">
                 Online
               </a>
             </span>
