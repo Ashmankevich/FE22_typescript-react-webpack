@@ -33,7 +33,7 @@ export const Registration: React.FC = () => {
       <Text>
         If you have account you can{' '}
         <span>
-          <a className="main-link" href="#">
+          <a className="main-link" href="main">
             login
           </a>
         </span>
