@@ -1,9 +1,15 @@
-import styles from './Header.module.css';
+import styles from '../header/Header.module.css';
+import { Burger } from './burger/BurgerBtn';
+import { Menu } from './menu/Menu';
+import { useState } from 'react';
 
-type HeaderProps = {
-  children: React.ReactNode;
-};
-
-export const Header: React.FC<HeaderProps> = ({ children }) => {
-  return <h1 className={styles.header}>{children}</h1>;
+export const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <header className={`${styles.header} ${isOpen ? styles.headerIsOpen : ''}`}>
+      <Burger onClick={() => setIsOpen(!isOpen)}>
+        <Menu></Menu>
+      </Burger>
+    </header>
+  );
 };

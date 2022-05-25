@@ -1,15 +1,28 @@
-import styles from '.BurgerBtn.module.css';
+import styles from './BurgerBtn.module.css';
 import { Menu } from '../menu/Menu';
 import { useState } from 'react';
 
-type BurgerBtnProps = {
+type BurgerProps = {
   children?: React.ReactNode;
   onClick: () => void;
 };
 
-/*export const Burger: React.FC<BurgerBtnProps> = ({ 
-   children,
-   onClick }) => {
+export const Burger: React.FC<BurgerProps> = ({ onClick }) => {
   const [isOpen, setIsOpen] = useState(false);
-  return ()
-};*/
+  return (
+    <div
+      className={
+        isOpen ? `${styles.burgerBtnOpen}` : `${styles.burgerBtnClose}`
+      }
+      onClick={() => {
+        setIsOpen(!isOpen);
+        onClick();
+      }}
+    >
+      <div className={styles.active}></div>
+      <div className={isOpen ? `${styles.menuOpen}` : `${styles.menuClose}`}>
+        <Menu></Menu>
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,75 @@
+.burgerBtnOpen,
+.burgerBtnClose {
+   z-index: 5;
+   cursor: pointer;
+   display: block;
+   position: fixed;
+   top: 27px;
+   left: 47px;
+   transition: all 0.3s ease 0s;
+}
+
+.active {
+   background-color: blueviolet;
+   position: absolute;
+   width: 24px;
+   height: 3px;
+   top: 50%;
+   left: 50%;
+   transition: all 0.3s ease 0s;
+   transform: translate(-50%, -50%);
+}
+
+.active::before {
+   content: "";
+   position: absolute;
+   width: 15px;
+   height: 3px;
+   bottom: 7.5px;
+   transition: all 0.3s ease 0s;
+   background-color: blueviolet;
+}
+
+.active::after {
+   content: "";
+   position: absolute;
+   width: 24px;
+   height: 3px;
+   top: 7.5px;
+   transition: all 0.3s ease 0s;
+   background-color: blueviolet;
+}
+
+.burgerBtnOpen .active {
+   background-color: transparent;
+ }
+
+ .burgerBtnOpen .active::before {
+   transform: rotate(45deg);
+   top: 0;
+   width: 24px;
+   transition: all 0.3s ease 0s;
+   background-color: whitesmoke;
+ }
+
+ .burgerBtnOpen .active::after {
+   transform: rotate(-45deg);
+   top: 0;
+   transition: all 0.3s ease 0s;
+   background-color: whitesmoke;
+ }
+
+.menuOpen {
+  display: block;
+  margin-top: 10px;
+  transition: all 0.3s ease 0s;
+  background-color: rgb(214, 123, 140);
+  width: 100%;
+  font-size: 22px;
+  position: fixed;
+  left: 0;
+  z-index: 20;
+}
+.menuClose {
+  display: none;
+}

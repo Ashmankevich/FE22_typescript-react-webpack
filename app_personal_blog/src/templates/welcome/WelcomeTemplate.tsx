@@ -8,17 +8,4 @@ type WelcomeTemplateProps = {
   actionButton: React.ReactNode;
 };
 
-export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = (
-  title,
-  children,
-  actionButton
-) => {
-  return (
-    <div>
-      {title}
-      <Title>Template title</Title>
-      <div>Template body</div>
-      <PrimaryButton className={styles.button}>button</PrimaryButton>
-    </div>
-  );
-};
+export {};

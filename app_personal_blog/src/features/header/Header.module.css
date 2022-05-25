@@ -1,8 +1,11 @@
 .header {
-      font-size: 36px;
-      line-height: 40px;
-      color: #7c67b6;
-      font-family: "Open Sans";
-      font-weight: 900;
-      text-align: center;
-}
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 20px;
+   width: 100%;
+   z-index: 20;
+ }
+ .headerIsOpen {
+   background-color: rgb(214, 123, 140);
+ }

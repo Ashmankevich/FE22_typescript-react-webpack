@@ -1,0 +1,32 @@
+.container {
+   display: flex;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 30px;
+}
+
+.page {
+   padding-top:150px;
+   flex-basis: 40%;
+   display:flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.title {
+   color:whitesmoke;
+   font-size: 40px;
+}
+
+.text {
+   font-size: 20px;
+   margin-bottom: 50px;
+}
+
+.link {
+   padding: 0;
+}
+
+span {
+   color: #EC7979;
+}
