@@ -1,4 +1,4 @@
-import stylesButtonForm from './Button-form.module.css';
+import stylesButtonForm from './FormButton.module.css';
 
 type ButtonFormProps = {
   children: React.ReactNode;

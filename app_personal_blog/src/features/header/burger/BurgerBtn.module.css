@@ -10,7 +10,7 @@
 }
 
 .active {
-   background-color: blueviolet;
+   background-color: #EC7979;
    position: absolute;
    width: 24px;
    height: 3px;
@@ -27,7 +27,7 @@
    height: 3px;
    bottom: 7.5px;
    transition: all 0.3s ease 0s;
-   background-color: blueviolet;
+   background-color: #EC7979;
 }
 
 .active::after {
@@ -37,7 +37,7 @@
    height: 3px;
    top: 7.5px;
    transition: all 0.3s ease 0s;
-   background-color: blueviolet;
+   background-color: #EC7979;
 }
 
 .burgerBtnOpen .active {

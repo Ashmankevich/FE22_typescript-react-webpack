@@ -1,10 +1,10 @@
 import { useState } from 'react'; // хук для хранения состояния (когда компоненет первый раз ренедрится происходит инициализация)
-import { UserName } from './input/UserName';
-import { Email } from './input/Email';
-import { Password } from './input/Password';
-import { PasswordConfirm } from './input/PasswordConfirm';
-import { ButtonForm } from './button-form/ButtonForm';
-import { Text } from './text/TextForm';
+import { UserName } from '../../../ui/input/UserName';
+import { Email } from '../../../ui/input/Email';
+import { Password } from '../../../ui/input/Password';
+import { PasswordConfirm } from '../../../ui/input/PasswordConfirm';
+import { ButtonForm } from '../../../ui/button/form-button/FormButton';
+import { Text } from '../../../ui/text/Text';
 
 export const Registration: React.FC = () => {
   const [userNameValue, setUserNameValue] = useState('James');

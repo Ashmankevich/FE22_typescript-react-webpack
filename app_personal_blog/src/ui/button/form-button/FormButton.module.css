@@ -13,16 +13,17 @@
    text-transform: capitalize;
    text-align: center;
    padding: 12px 0 12px 0;
+   margin-bottom: 20px;
    transition: all 0.3s linear 0s;
 } 
 
-.button:hover {
+.button_form:hover {
 color: #fff;
 background-color: #ab4949;
 cursor: pointer;
 }
 
-.button:active {
+.button_form:active {
 box-shadow: 0px 0px 10px 0px #ab4949 inset;
 color: #fff;
 background-color: #ec7979;

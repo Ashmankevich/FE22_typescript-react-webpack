@@ -1,4 +1,4 @@
-import styles from './Menu.module.css';
+import style from './Menu.module.css';
 
 type MenuProps = {
   children?: React.ReactNode;
@@ -6,19 +6,27 @@ type MenuProps = {
 
 export const Menu: React.FC<MenuProps> = () => {
   return (
-    <nav className={styles.styles}>
+    <nav className={style.styles}>
       <ul>
         <li>
-          <a href="All post">All posts</a>
+          <a className={style.link} href="All post">
+            All posts
+          </a>
         </li>
         <li>
-          <a href="My post">My post</a>
+          <a className={style.link} href="My post">
+            My post
+          </a>
         </li>
         <li>
-          <a href="Add post">Add posts</a>
+          <a className={style.link} href="Add post">
+            Add posts
+          </a>
         </li>
         <li>
-          <a href="All post">Log out</a>
+          <a className={style.link} href="All post">
+            Log out
+          </a>
         </li>
       </ul>
     </nav>

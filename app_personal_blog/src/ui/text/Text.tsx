@@ -1,9 +1,9 @@
-import styles from './Text-form.module.css';
+import style from './Text.module.css';
 
 type TextProps = {
   children: React.ReactNode;
 };
 
 export const Text: React.FC<TextProps> = ({ children }) => {
-  return <p className={styles.text}>{children}</p>;
+  return <p className={style.text}>{children}</p>;
 };

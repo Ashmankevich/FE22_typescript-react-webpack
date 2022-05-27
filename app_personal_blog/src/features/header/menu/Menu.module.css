@@ -2,7 +2,7 @@ li {
    list-style-type: none;
 }
 
-a{
+.link{
    display: block;
    text-decoration: none;
    color: whitesmoke;
