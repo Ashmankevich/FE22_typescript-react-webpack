@@ -1,3 +1,4 @@
+import style from './ContentTemplate.module.css';
 import { Title } from '../../ui/title/Title';
 
 type ContentTemplateProps = {
@@ -10,7 +11,7 @@ export const ContentTemplate: React.FC<ContentTemplateProps> = ({
   children,
 }) => {
   return (
-    <div>
+    <div className={style.container}>
       <Title>{title}</Title>
       <div>{children}</div>
     </div>

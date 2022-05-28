@@ -1,4 +1,4 @@
-import styles from './CardList.module.css';
+import style from './CardList.module.css';
 import { CardPost } from '../card-post/CardPost';
 
 export const CardList: React.FC = () => {
@@ -26,7 +26,7 @@ export const CardList: React.FC = () => {
     },
   ];
   return (
-    <div className={styles.cardList}>
+    <div className={style.cardList}>
       {items.map((item) => (
         <CardPost
           id={item.id}

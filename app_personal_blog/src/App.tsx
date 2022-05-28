@@ -4,12 +4,13 @@ import './App.css';
 //import { LoginPage } from './pages/login-page/LoginPage';
 //import { LoginConfirmation } from './pages/loginConfirmation-page/LoginConfirmation';
 //import { RegistrationPage } from './pages/registration-page/RegistrationPage';
-import { RegistrationConfirmation } from './pages/registrationConfirmation-page/RegistrationConfirmation';
+//import { RegistrationConfirmation } from './pages/registrationConfirmation-page/RegistrationConfirmation';
+import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
 
 function App() {
   return (
     <div className="app">
-      <RegistrationConfirmation></RegistrationConfirmation>
+      <SelectedPostPage></SelectedPostPage>
     </div>
   );
 }
