@@ -1,0 +1,29 @@
+.item {
+   background-color: white;
+   border-radius: 15px;
+   border: none;
+   padding: 20px;
+   text-align: left;
+   cursor: pointer;
+ }
+ 
+ .item_img {
+   width: 200px;
+   height: 200px;
+   border-radius: 15px;
+   margin-bottom: 30px;
+ }
+ 
+ .item_title {
+   font-size: 20px;
+   line-height: 24px;
+   margin-bottom: 20px;
+   font-weight: 600;
+ }
+ 
+ .item_text {
+   font-size: 20px;
+   line-height: 24px;
+   margin-bottom: 20px;
+ }
+ 

@@ -1,0 +1,25 @@
+.container {
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   flex-direction: column;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 30px;
+}
+
+.title {
+   display: flex;
+   padding: 0 0 20px 0;
+   color:rgb(119, 107, 107);
+}
+
+a {
+   margin: 0 7px;
+   text-decoration: none;
+   color:#ec7979;
+}
+
+.last__input {
+   margin-bottom: 25px;
+}

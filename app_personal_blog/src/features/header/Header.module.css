@@ -1,0 +1,11 @@
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 20px;
+   width: 100%;
+   z-index: 20;
+ }
+ .headerIsOpen {
+   background-color: rgb(214, 123, 140);
+ }

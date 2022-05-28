@@ -1,0 +1,28 @@
+.container {
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   flex-direction: column;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 30px;
+}
+
+.row {
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   flex-direction: column;
+   margin-bottom: 50px;
+}
+
+a {
+   margin-right: 7px;
+   text-decoration: none;
+   color:#ec7979;
+}
+
+.text {
+   color: rgb(68, 55, 55);
+   font-weight: 600;
+}

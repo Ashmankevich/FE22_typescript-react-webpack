@@ -1,0 +1,11 @@
+html,
+.app {
+   --primary-text-color: #EC7979;
+   --secondary-text-color: grey;
+   --blue-background-color: blue; 
+  background-image: url("../src/ui/cover/Cover1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
