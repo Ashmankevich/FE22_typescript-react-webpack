@@ -1,4 +1,4 @@
-import styles from './CardPost.module.css';
+import style from './CardPost.module.css';
 
 type CardPostProps = {
   id: number;
@@ -15,11 +15,11 @@ export const CardPost: React.FC<CardPostProps> = ({
   title,
 }) => {
   return (
-    <div className={styles.item} id={`${id}`}>
-      <img className={styles.item_img} src={image} alt="" />
-      <h2 className={styles.item_title}>{title}</h2>
-      <p className={styles.item_text}>{text}</p>
-      <p className={styles.item_date}>{date}</p>
+    <div className={style.item} id={`${id}`}>
+      <img className={style.item_img} src={image} alt="" />
+      <h2 className={style.item_title}>{title}</h2>
+      <p className={style.item_text}>{text}</p>
+      <p className={style.item_date}>{date}</p>
     </div>
   );
 };

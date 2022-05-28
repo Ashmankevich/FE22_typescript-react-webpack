@@ -1,9 +1,9 @@
-import styles from './Title.module.css';
+import style from './Title.module.css';
 
 type TitleProps = {
   children: React.ReactNode;
 };
 
 export const Title: React.FC<TitleProps> = ({ children }) => {
-  return <h1 className={styles.title}>{children}</h1>;
+  return <h1 className={`${style.title} ${style.conf}`}>{children}</h1>;
 };

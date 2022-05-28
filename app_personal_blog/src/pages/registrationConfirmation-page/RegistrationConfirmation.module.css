@@ -8,10 +8,12 @@
    padding: 0 30px;
 }
 
-.title {
+.row {
    display: flex;
-   padding: 0 0 20px 0;
-   color:rgb(119, 107, 107);
+   justify-content:center;
+   align-items: center;
+   flex-direction: column;
+   margin-bottom: 50px;
 }
 
 a {
@@ -20,9 +22,7 @@ a {
    color:#ec7979;
 }
 
-.last__input {
-   margin-bottom: 25px;
+.text {
+   color: rgb(68, 55, 55);
+   font-weight: 600;
 }
-
-
-
