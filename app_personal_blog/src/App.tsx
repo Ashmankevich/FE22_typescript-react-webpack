@@ -5,12 +5,13 @@ import './App.css';
 //import { LoginConfirmation } from './pages/loginConfirmation-page/LoginConfirmation';
 //import { RegistrationPage } from './pages/registration-page/RegistrationPage';
 //import { RegistrationConfirmation } from './pages/registrationConfirmation-page/RegistrationConfirmation';
-import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
+//import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
+import { AllPostPage } from './pages/all-posts-page/AllPostPage';
 
 function App() {
   return (
     <div className="app">
-      <SelectedPostPage></SelectedPostPage>
+      <AllPostPage></AllPostPage>
     </div>
   );
 }
