@@ -20,10 +20,12 @@ export const LoginForm: React.FC = () => {
         value={emailValue}
         onChange={(event) => setEmailValue(event.target.value)}
       ></Email>
-      <Password
-        value={passwordValue}
-        onChange={(event) => setPasswordValue(event.target.value)}
-      ></Password>
+      <div className={style.last__input}>
+        <Password
+          value={passwordValue}
+          onChange={(event) => setPasswordValue(event.target.value)}
+        ></Password>
+      </div>
       <ButtonForm>Login</ButtonForm>
       <Text>
         Forgot your password?{' '}

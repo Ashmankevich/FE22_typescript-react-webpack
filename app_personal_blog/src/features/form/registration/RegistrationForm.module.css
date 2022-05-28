@@ -15,7 +15,7 @@
 }
 
 a {
-   margin-right: 7px;
+   margin: 0 7px;
    text-decoration: none;
    color:#ec7979;
 }
@@ -23,6 +23,3 @@ a {
 .last__input {
    margin-bottom: 25px;
 }
-
-
-
