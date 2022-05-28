@@ -1,11 +1,21 @@
-import { PrimaryButton } from '../../ui/button/primary-button/PrimaryButton';
-import { Title } from '../../ui/title/Title';
-import styles from './WelcomeTemplate.module.css';
+import style from './AuthorizationTemplate.module.css';
 
-type WelcomeTemplateProps = {
+type AuthorizationTemplateProps = {
   title: React.ReactNode;
   children: React.ReactNode;
-  actionButton: React.ReactNode;
+  Button: React.ReactNode;
 };
 
-export {};
+export const AuthorizationTemplate: React.FC<AuthorizationTemplateProps> = ({
+  title,
+  children,
+  Button,
+}) => {
+  return (
+    <div className={style.container}>
+      {title}
+      {children}
+      {Button}
+    </div>
+  );
+};
