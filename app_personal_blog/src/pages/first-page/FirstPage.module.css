@@ -24,6 +24,8 @@
 }
 
 .link {
+   text-decoration: none;
+   color: whitesmoke;
    padding: 0;
 }
 
