@@ -21,7 +21,7 @@ export const FirstPage: React.FC<FirstPageProps> = () => {
           Quisquam doloremque maiores, natus minus deserunt ipsa sunt assumenda
           ad aspernatur eos quas cum repudiandae saepe possimus.
         </p>
-        <Button>Learn more</Button>
+        <Button className={style.button}>Learn more</Button>
       </div>
     </div>
   );

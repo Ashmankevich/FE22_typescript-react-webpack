@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AuthorizationTemplate } from '../../../templates/authorization/AuthorizationTemplate';
 import style from './LoginForm.module.css';
-import { PrimaryButton } from '../../../ui/button/primary-button/PrimaryButton';
+import { Button } from '../../../ui/button/Button';
 import { Email } from '../../../ui/input/Email';
 import { Password } from '../../../ui/input/Password';
 import { Text } from '../../../ui/text/Text';
@@ -34,7 +34,7 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           ></Password>
         </form>
       </AuthorizationTemplate>
-      <PrimaryButton className={style.button}>Login</PrimaryButton>
+      <Button className={style.button}>Login</Button>
       <Text>
         Forgot your password?{' '}
         <span>

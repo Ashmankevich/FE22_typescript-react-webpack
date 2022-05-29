@@ -32,3 +32,14 @@
 span {
    color: #EC7979;
 }
+
+.button {
+   font-family: "Open Sans";
+   font-weight: 600;
+   display: block;
+   max-width: 170px;
+   width: 100%;
+   text-transform: capitalize;
+   text-align: center;
+   transition: all 0.3s linear 0s;
+} 

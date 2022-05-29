@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Header } from '../../features/header/Header';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
 import { CardList } from '../../ui/card/card-list/CardList';
-import { PrimaryButton } from '../../ui/button/primary-button/PrimaryButton';
+import { Button } from '../../ui/button/Button';
 import { Title } from '../../ui/title/Title';
 
 type AllPostPageProps = {};
@@ -24,7 +24,7 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
         title={
           <div className={style.row}>
             <Title>My posts</Title>
-            <PrimaryButton className={style.button}>+Add</PrimaryButton>
+            <Button className={style.button}>+Add</Button>
           </div>
         }
       >
