@@ -1,32 +1,40 @@
 import { useState } from 'react';
+import { AuthorizationTemplate } from '../../../templates/authorization/AuthorizationTemplate';
 import style from './LoginForm.module.css';
-import { ButtonForm } from '../../../ui/button/form-button/FormButton';
+import { PrimaryButton } from '../../../ui/button/primary-button/PrimaryButton';
 import { Email } from '../../../ui/input/Email';
 import { Password } from '../../../ui/input/Password';
 import { Text } from '../../../ui/text/Text';
 import { Title } from '../../../ui/title/Title';
 
-export const LoginForm: React.FC = () => {
+type LoginFormProps = {};
+
+export const LoginForm: React.FC<LoginFormProps> = () => {
   const [emailValue, setEmailValue] = useState('jimiswank@gmail.com');
   const [passwordValue, setPasswordValue] = useState('123456');
   return (
-    <form className={style.container}>
-      <Title>
-        <span className={style.title}>
-          <a href="link">Login</a> | Registration
-        </span>
-      </Title>
-      <Email
-        value={emailValue}
-        onChange={(event) => setEmailValue(event.target.value)}
-      ></Email>
-      <div className={style.last__input}>
-        <Password
-          value={passwordValue}
-          onChange={(event) => setPasswordValue(event.target.value)}
-        ></Password>
-      </div>
-      <ButtonForm>Login</ButtonForm>
+    <div className={style.container}>
+      <AuthorizationTemplate
+        title={
+          <Title>
+            <span className={style.title}>
+              <a href="link">Login</a> | Registration
+            </span>
+          </Title>
+        }
+      >
+        <form className={style.form}>
+          <Email
+            value={emailValue}
+            onChange={(event) => setEmailValue(event.target.value)}
+          ></Email>
+          <Password
+            value={passwordValue}
+            onChange={(event) => setPasswordValue(event.target.value)}
+          ></Password>
+        </form>
+      </AuthorizationTemplate>
+      <PrimaryButton className={style.button}>Login</PrimaryButton>
       <Text>
         Forgot your password?{' '}
         <span>
@@ -35,6 +43,6 @@ export const LoginForm: React.FC = () => {
           </a>
         </span>
       </Text>
-    </form>
+    </div>
   );
 };
