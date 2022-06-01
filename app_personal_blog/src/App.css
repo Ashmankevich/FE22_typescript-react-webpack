@@ -2,10 +2,22 @@ html,
 .app {
    --primary-text-color: #EC7979;
    --secondary-text-color: grey;
+   --menu-color: rgb(214, 123, 140);
    --blue-background-color: blue; 
+   --burger-open-color: whitesmoke;
   background-image: url("../src/ui/cover/Cover1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+}
+
+@media (prefers-color-scheme:dark) {
+   .app {
+      --primary-text-color: #725858;
+      --secondary-text-color: rgb(126, 37, 37);
+      --menu-color: rgb(88, 188, 255);
+      --blue-background-color: rgb(70, 146, 34); 
+      --burger-open-color: rgb(150, 78, 78);
+   } 
 }

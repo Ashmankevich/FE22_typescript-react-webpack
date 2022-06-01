@@ -8,18 +8,14 @@ import './App.css';
 //import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
 //import { AllPostPage } from './pages/all-posts-page/AllPostPage';
 //import { InformationPage } from './pages/information-page/InformationPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AppPages } from './types';
+//import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//import { AppPages } from './types';
 import { LoginPage } from './pages/login-page/LoginPage';
 
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
-        <Routes>
-          <Route path={AppPages.LOGIN} element={LoginPage}></Route>
-        </Routes>
-      </BrowserRouter>
+      <LoginPage></LoginPage>
     </div>
   );
 }

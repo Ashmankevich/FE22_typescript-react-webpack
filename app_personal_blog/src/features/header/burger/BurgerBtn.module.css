@@ -10,7 +10,7 @@
 }
 
 .active {
-   background-color: #EC7979;
+   background-color: var(--primary-text-color);
    position: absolute;
    width: 24px;
    height: 3px;
@@ -27,7 +27,7 @@
    height: 3px;
    bottom: 7.5px;
    transition: all 0.3s ease 0s;
-   background-color: #EC7979;
+   background-color: var(--primary-text-color);
 }
 
 .active::after {
@@ -37,7 +37,7 @@
    height: 3px;
    top: 7.5px;
    transition: all 0.3s ease 0s;
-   background-color: #EC7979;
+   background-color: var(--primary-text-color);
 }
 
 .burgerBtnOpen .active {
@@ -49,21 +49,21 @@
    top: 0;
    width: 24px;
    transition: all 0.3s ease 0s;
-   background-color: whitesmoke;
+   background-color: var(--burger-open-color);
  }
 
  .burgerBtnOpen .active::after {
    transform: rotate(-45deg);
    top: 0;
    transition: all 0.3s ease 0s;
-   background-color: whitesmoke;
+   background-color: var(--burger-open-color);
  }
 
 .menuOpen {
   display: block;
   margin-top: 10px;
   transition: all 0.3s ease 0s;
-  background-color: rgb(214, 123, 140);
+  background-color: var(--menu-color);
   width: 100%;
   font-size: 22px;
   position: fixed;

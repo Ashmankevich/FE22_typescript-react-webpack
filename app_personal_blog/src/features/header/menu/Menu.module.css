@@ -5,7 +5,7 @@ li {
 .link{
    display: block;
    text-decoration: none;
-   color: whitesmoke;
+   color: var(--burger-open-color);
    padding: 0 40px;
 }
 
