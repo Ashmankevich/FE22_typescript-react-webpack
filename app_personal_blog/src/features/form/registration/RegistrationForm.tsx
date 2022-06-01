@@ -1,4 +1,4 @@
-import { useState } from 'react'; // хук для хранения состояния (когда компоненет первый раз ренедрится происходит инициализация)
+import { useState } from 'react';
 import style from './RegistrationForm.module.css';
 import { UserName } from '../../../ui/input/UserName';
 import { Email } from '../../../ui/input/Email';
@@ -8,6 +8,8 @@ import { Text } from '../../../ui/text/Text';
 import { Title } from '../../../ui/title/Title';
 import { AuthorizationTemplate } from '../../../templates/authorization/AuthorizationTemplate';
 import { Button } from '../../../ui/button/Button';
+import { AppPages } from '../../../types';
+import { useNavigate } from 'react-router-dom';
 
 type RegistrationFormProps = {};
 
@@ -16,6 +18,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
   const [emailValue, setEmailValue] = useState('jimiswank@gmail.com');
   const [passwordValue, setPasswordValue] = useState('123456');
   const [passwordConfirmValue, setPasswordConfirmValue] = useState('123456');
+  const navigate = useNavigate();
   return (
     <div className={style.container}>
       <AuthorizationTemplate
@@ -46,7 +49,12 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
           ></PasswordConfirm>
         </form>
       </AuthorizationTemplate>
-      <Button className={style.button}>Home</Button>
+      <Button
+        className={style.button}
+        onClick={() => navigate(AppPages.REGISTRATION_CONFIRMATION)}
+      >
+        Registration
+      </Button>
       <Text>
         If you have account you can{' '}
         <span>

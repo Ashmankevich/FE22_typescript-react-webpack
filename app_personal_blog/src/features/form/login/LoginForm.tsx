@@ -6,6 +6,8 @@ import { Email } from '../../../ui/input/Email';
 import { Password } from '../../../ui/input/Password';
 import { Text } from '../../../ui/text/Text';
 import { Title } from '../../../ui/title/Title';
+import { Link } from 'react-router-dom';
+import { AppPages } from '../../../types';
 
 type LoginFormProps = {};
 
@@ -18,7 +20,7 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
         title={
           <Title>
             <span className={style.title}>
-              <a href="link">Login</a> | Registration
+              Login <Link to={AppPages.REGISTRATION}>| Registration</Link>
             </span>
           </Title>
         }
@@ -34,7 +36,11 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           ></Password>
         </form>
       </AuthorizationTemplate>
-      <Button className={style.button}>Login</Button>
+      <Link to={AppPages.ALL_POST}>
+        <Button className={style.button} role="presentation">
+          Login
+        </Button>
+      </Link>
       <Text>
         Forgot your password?{' '}
         <span>

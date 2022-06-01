@@ -3,6 +3,8 @@ import { Header } from '../../features/header/Header';
 import { Title } from '../../ui/title/Title';
 import { Button } from '../../ui/button/Button';
 import { AuthorizationTemplate } from '../../templates/authorization/AuthorizationTemplate';
+import { Link } from 'react-router-dom';
+import { AppPages } from '../../types';
 
 type RegistrationConfirmationProps = {};
 
@@ -24,7 +26,11 @@ export const RegistrationConfirmation: React.FC<
           <span className={style.text}>Please, check your email</span>
         </p>
       </AuthorizationTemplate>
-      <Button className={style.button}>Home</Button>
+      <Link to={AppPages.LOGIN}>
+        <Button className={style.button} role="presentation">
+          Home
+        </Button>
+      </Link>
     </div>
   );
 };
