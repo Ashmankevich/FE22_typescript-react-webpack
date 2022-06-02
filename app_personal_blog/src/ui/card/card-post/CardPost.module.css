@@ -7,21 +7,26 @@
    cursor: pointer;
  }
  
- .item_img {
-   width: 200px;
-   height: 200px;
+ .wrapper {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 100px;
+ }
+
+ .img {
+   width: 100%;
+   object-fit: cover;
    border-radius: 15px;
-   margin-bottom: 30px;
  }
  
- .item_title {
+ .title {
    font-size: 20px;
    line-height: 24px;
    margin-bottom: 20px;
    font-weight: 600;
  }
  
- .item_text {
+ .text {
    font-size: 20px;
    line-height: 24px;
    margin-bottom: 20px;

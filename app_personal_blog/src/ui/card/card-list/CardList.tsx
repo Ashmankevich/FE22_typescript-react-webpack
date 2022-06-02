@@ -1,35 +1,23 @@
-import styles from './CardList.module.css';
+import style from './CardList.module.css';
 import { CardPost } from '../card-post/CardPost';
 
-export const CardList: React.FC = () => {
-  const items = [
-    {
-      id: 1,
-      image: 'lorem',
-      text: 'lorem',
-      date: 'lorem',
-      title: 'lorem',
-    },
-    {
-      id: 2,
-      image: 'lorem',
-      text: 'lorem',
-      date: 'lorem',
-      title: 'lorem',
-    },
-    {
-      id: 3,
-      image: 'lorem',
-      text: 'lorem',
-      date: 'lorem',
-      title: 'lorem',
-    },
-  ];
+type CardListProps = {
+  data: Array<{
+    id: number;
+    image?: string | undefined;
+    title: string;
+    text: string;
+    date: string;
+  }>;
+};
+
+export const CardList: React.FC<CardListProps> = ({ data }) => {
   return (
-    <div className={styles.cardList}>
-      {items.map((item) => (
+    <div className={style.cardList}>
+      {data.map((item) => (
         <CardPost
           id={item.id}
+          key={item.id}
           image={item.image}
           text={item.text}
           date={item.date}

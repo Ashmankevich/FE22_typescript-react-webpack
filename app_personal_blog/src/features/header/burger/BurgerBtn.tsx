@@ -1,4 +1,4 @@
-import styles from './BurgerBtn.module.css';
+import style from './BurgerBtn.module.css';
 import { Menu } from '../menu/Menu';
 import { useState } from 'react';
 
@@ -11,16 +11,14 @@ export const Burger: React.FC<BurgerProps> = ({ onClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={
-        isOpen ? `${styles.burgerBtnOpen}` : `${styles.burgerBtnClose}`
-      }
+      className={isOpen ? `${style.burgerBtnOpen}` : `${style.burgerBtnClose}`}
       onClick={() => {
         setIsOpen(!isOpen);
         onClick();
       }}
     >
-      <div className={styles.active}></div>
-      <div className={isOpen ? `${styles.menuOpen}` : `${styles.menuClose}`}>
+      <div className={style.active}></div>
+      <div className={isOpen ? `${style.menuOpen}` : `${style.menuClose}`}>
         <Menu></Menu>
       </div>
     </div>

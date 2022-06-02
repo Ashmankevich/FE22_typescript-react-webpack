@@ -7,5 +7,5 @@
    z-index: 20;
  }
  .headerIsOpen {
-   background-color: rgb(214, 123, 140);
+   background-color: var(--menu-color);
  }
