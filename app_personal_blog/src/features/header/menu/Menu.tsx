@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { AppPages } from '../../../types';
 import style from './Menu.module.css';
 
 type MenuProps = {
@@ -8,25 +10,17 @@ export const Menu: React.FC<MenuProps> = () => {
   return (
     <nav className={style.styles}>
       <ul>
-        <li>
-          <a className={style.link} href="All post">
-            All posts
-          </a>
+        <li className={style.link}>
+          <a href="All post">All posts</a>
         </li>
-        <li>
-          <a className={style.link} href="My post">
-            My post
-          </a>
+        <li className={style.link}>
+          <Link to={AppPages.ALL_POST}>My post</Link>
         </li>
-        <li>
-          <a className={style.link} href="Add post">
-            Add posts
-          </a>
+        <li className={style.link}>
+          <a href="Add post">Add posts</a>
         </li>
-        <li>
-          <a className={style.link} href="All post">
-            Log out
-          </a>
+        <li className={style.link}>
+          <a href="All post">Log out</a>
         </li>
       </ul>
     </nav>

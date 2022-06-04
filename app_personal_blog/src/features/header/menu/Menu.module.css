@@ -2,11 +2,16 @@ li {
    list-style-type: none;
 }
 
-.link{
+.link a{
    display: block;
    text-decoration: none;
    color: var(--burger-open-color);
    padding: 0 40px;
+   width:120px;
+}
+
+.link a:hover{
+   font-weight: 900;
 }
 
 ul {

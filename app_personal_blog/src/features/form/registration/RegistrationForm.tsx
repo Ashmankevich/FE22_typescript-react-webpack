@@ -9,7 +9,7 @@ import { Title } from '../../../ui/title/Title';
 import { AuthorizationTemplate } from '../../../templates/authorization/AuthorizationTemplate';
 import { Button } from '../../../ui/button/Button';
 import { AppPages } from '../../../types';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type RegistrationFormProps = {};
 
@@ -24,9 +24,12 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
       <AuthorizationTemplate
         title={
           <Title>
-            <span className={style.title}>
-              Login |<a href="link">Registration</a>
-            </span>
+            <div className={style.row}>
+              <span className={style.title__active}>
+                <Link to={AppPages.LOGIN}>Login</Link>
+              </span>
+              <span className={style.title__disable}>| Registration</span>
+            </div>
           </Title>
         }
       >
@@ -57,10 +60,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
       </Button>
       <Text>
         If you have account you can{' '}
-        <span>
-          <a className="main-link" href="main">
-            login
-          </a>
+        <span className={style.link}>
+          <Link to={AppPages.LOGIN}>login</Link>
         </span>
       </Text>
     </div>

@@ -19,9 +19,12 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
       <AuthorizationTemplate
         title={
           <Title>
-            <span className={style.title}>
-              Login <Link to={AppPages.REGISTRATION}>| Registration</Link>
-            </span>
+            <div className={style.row}>
+              <span className={style.title__disable}>Login |</span>
+              <span className={style.title__active}>
+                <Link to={AppPages.REGISTRATION}>Registration</Link>
+              </span>
+            </div>
           </Title>
         }
       >
@@ -36,17 +39,13 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           ></Password>
         </form>
       </AuthorizationTemplate>
-      <Link to={AppPages.ALL_POST}>
-        <Button className={style.button} role="presentation">
-          Login
-        </Button>
+      <Link to={AppPages.LOGIN_CONFIRMATION}>
+        <Button className={style.button}>Login</Button>
       </Link>
       <Text>
         Forgot your password?{' '}
-        <span>
-          <a className="main-link" href="Link">
-            Reset password
-          </a>
+        <span className={style.link}>
+          <Link to={AppPages.REGISTRATION}>Reset password</Link>
         </span>
       </Text>
     </div>

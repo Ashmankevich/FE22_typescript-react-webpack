@@ -7,16 +7,26 @@
    padding: 0 30px;
 }
 
-.title {
+.row {
    display: flex;
-   padding: 0 0 20px 0;
-   color:rgb(119, 107, 107);
 }
 
-a {
-   margin-right: 7px;
-   text-decoration: none;
-   color:#ec7979;
+.title__active a{
+   padding: 0 0 20px 0;
+   color:gray;
+   margin-left: 8px;
+}
+
+.title__active a:hover{
+   color: var(--primary-text-color);
+}
+
+.title__disable a{
+   color: var(--primary-text-color);
+}
+
+.link a {
+   color: var(--primary-text-color); 
 }
 
 .form {
@@ -37,7 +47,6 @@ a {
    font-weight: 600;
    display: block;
    max-width: 230px;
-   width: 100%;
    text-transform: capitalize;
    text-align: center;
    padding: 12px 0 12px 0;
