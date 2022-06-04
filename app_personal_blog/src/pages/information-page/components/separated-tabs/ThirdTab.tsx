@@ -1,8 +1,8 @@
-import style from './SecondTab.module.css';
+import style from './GeneralTab.module.css';
 
-type SecondTabProps = {};
+type ThirdTabProps = {};
 
-export const SecondTab: React.FC<SecondTabProps> = () => {
+export const ThirdTab: React.FC<ThirdTabProps> = () => {
   return (
     <div className={style.wrapper}>
       <p className={style.content}>
@@ -16,13 +16,7 @@ export const SecondTab: React.FC<SecondTabProps> = () => {
         totam harum molestias nesciunt aut maxime soluta, enim explicabo.
         Adipisci eius quasi suscipit quod iure itaque maiores sed officiis
         nobis. Minus est ratione maiores dolor, sapiente consectetur neque
-        incidunt nulla nostrum aut ipsam consequuntur id quas. Repellendus,
-        nisi? Est repellendus in perspiciatis aliquam sunt mollitia inventore
-        iure. Optio beatae exercitationem veniam excepturi rem obcaecati
-        eligendi libero necessitatibus nostrum similique reprehenderit illum,
-        expedita magni nobis quos unde architecto recusandae. Quaerat, quos
-        quisquam possimus voluptates provident blanditiis natus doloribus fuga
-        reiciendis a, similique harum nesciunt.
+        incidunt nulla nostrum aut ipsam consequuntur id quas.
       </p>
     </div>
   );

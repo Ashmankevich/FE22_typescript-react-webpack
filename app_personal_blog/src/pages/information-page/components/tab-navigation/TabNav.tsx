@@ -1,3 +1,5 @@
+import style from './TabNav.module.css';
+
 type TabNavProps = {
   id: string;
   title: string;
@@ -16,7 +18,10 @@ export const TabNav: React.FC<TabNavProps> = ({
   };
 
   return (
-    <li onClick={handleClick} className={activeTab === id ? 'active' : ''}>
+    <li
+      onClick={handleClick}
+      className={activeTab === id ? `${style.active}` : `${style.not_active}`}
+    >
       {title}
     </li>
   );

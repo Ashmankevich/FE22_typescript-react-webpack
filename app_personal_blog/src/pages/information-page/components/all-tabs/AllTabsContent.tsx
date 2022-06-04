@@ -1,10 +1,10 @@
 import style from './AllTabsContent.module.css';
 import { useState } from 'react';
-import { FirstTab } from './FirstTab';
-import { SecondTab } from './SecondTab';
-import { ThirdTab } from './ThirdTab';
-import { TabNav } from './TabNav';
-import { TabContent } from './TabContent';
+import { FirstTab } from '../separated-tabs/FirstTab';
+import { SecondTab } from '../separated-tabs/SecondTab';
+import { ThirdTab } from '../separated-tabs/ThirdTab';
+import { TabNav } from '../tab-navigation/TabNav';
+import { TabContent } from '../tab-content/TabContent';
 
 type AllTabsContentProps = {};
 
@@ -12,7 +12,7 @@ export const AllTabsContent: React.FC<AllTabsContentProps> = () => {
   const [activeTab, setActiveTab] = useState('tab1');
 
   return (
-    <div className={style.wrapper}>
+    <div className={style.row}>
       <ul className={style.nav}>
         <TabNav
           title="Tab 1"
@@ -33,7 +33,7 @@ export const AllTabsContent: React.FC<AllTabsContentProps> = () => {
           setActiveTab={setActiveTab}
         ></TabNav>
       </ul>
-      <div className={style.content}>
+      <div className={style.wrapper}>
         <TabContent id="tab1" activeTab={activeTab}>
           <FirstTab></FirstTab>
         </TabContent>

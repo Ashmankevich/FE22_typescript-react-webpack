@@ -1,3 +1,5 @@
+import style from './TabContent.module.css';
+
 type TabContentProps = {
   id: string;
   activeTab: string;
@@ -10,6 +12,6 @@ export const TabContent: React.FC<TabContentProps> = ({
   children,
 }) => {
   return activeTab === id ? (
-    <div className="tab-content">{children}</div>
+    <div className={style.content}>{children}</div>
   ) : null;
 };

@@ -1,0 +1,20 @@
+.wrapper {
+   background-color: var(--burger-open-color);
+   border-radius: 20px;
+   padding: 35px 200px 100px 35px;
+}
+
+.content,
+.title {
+   text-indent: 25px;
+}
+
+.list {
+   display: flex;
+   flex-direction: column;
+}
+
+.item {
+   padding:5px;
+   list-style-type: disc;
+}

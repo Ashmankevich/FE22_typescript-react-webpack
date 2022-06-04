@@ -2,7 +2,7 @@ import style from './InformationPage.module.css';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
 import { Header } from '../../features/header/Header';
 import { Title } from '../../ui/title/Title';
-import { AllTabsContent } from './components/AllTabsContent';
+import { AllTabsContent } from './components/all-tabs/AllTabsContent';
 
 type InformationProps = {};
 

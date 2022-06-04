@@ -1,4 +1,4 @@
-import styles from './Button.module.css';
+import style from './Button.module.css';
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`${styles.button} ${className}`}
+      className={`${style.button} ${className}`}
       type={type}
       onClick={onClick}
       role={role}
