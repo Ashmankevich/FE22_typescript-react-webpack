@@ -8,7 +8,7 @@ type MenuProps = {
 
 export const Menu: React.FC<MenuProps> = () => {
   return (
-    <nav className={style.styles}>
+    <nav>
       <ul>
         <li className={style.link}>
           <a href="All post">All posts</a>

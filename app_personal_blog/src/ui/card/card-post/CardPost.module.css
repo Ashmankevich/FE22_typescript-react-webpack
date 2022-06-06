@@ -5,30 +5,55 @@
    padding: 20px;
    text-align: left;
    cursor: pointer;
- }
- 
- .wrapper {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 100px;
- }
+}
 
- .img {
+.wrapper {
+   width: 200px;
+   height: 200px;
+   margin-bottom: 100px;
+}
+
+.img {
    width: 100%;
    object-fit: cover;
    border-radius: 15px;
- }
- 
- .title {
+}
+
+.title {
    font-size: 20px;
    line-height: 24px;
    margin-bottom: 20px;
    font-weight: 600;
- }
- 
- .text {
+}
+
+.text {
    font-size: 20px;
    line-height: 24px;
    margin-bottom: 20px;
- }
- 
+}
+
+.row {
+   display: flex;
+   align-items: center;
+}
+
+.date {
+   color: #ff9797;
+   font-weight: 700;
+}
+
+.pic svg {
+   margin-left: 20px;
+   width: 40px;
+   height: 40px;
+}
+
+.pic svg path {
+   fill: #ec7979;
+   color: #ff9797;
+}
+
+.pic svg:hover path {
+   fill: tomato;
+   color: tomato;
+}
