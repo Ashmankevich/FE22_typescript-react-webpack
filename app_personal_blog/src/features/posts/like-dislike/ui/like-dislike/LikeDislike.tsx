@@ -18,11 +18,47 @@ export const LikeDislike: React.FC<LikeDislikeProps> = ({
   currentState,
   count,
 }) => {
-  const Like = <FontAwesomeIcon icon={faThumbsUp} />;
-  const PressedLike = <FontAwesomeIcon icon={pressedLike} />;
+  const Like = (
+    <FontAwesomeIcon
+      icon={faThumbsUp}
+      onClick={(event) => {
+        event.preventDefault();
+        onLikeClick();
+      }}
+      role="button"
+    />
+  );
+  const PressedLike = (
+    <FontAwesomeIcon
+      icon={pressedLike}
+      onClick={(event) => {
+        event.preventDefault();
+        onLikeClick();
+      }}
+      role="button"
+    />
+  );
 
-  const DisLike = <FontAwesomeIcon icon={faThumbsDown} />;
-  const PressedDisLike = <FontAwesomeIcon icon={pressedDisLike} />;
+  const DisLike = (
+    <FontAwesomeIcon
+      icon={faThumbsDown}
+      onClick={(event) => {
+        event.preventDefault();
+        onDisLikeClick();
+      }}
+      role="button"
+    />
+  );
+  const PressedDisLike = (
+    <FontAwesomeIcon
+      icon={pressedDisLike}
+      onClick={(event) => {
+        event.preventDefault();
+        onDisLikeClick();
+      }}
+      role="button"
+    />
+  );
 
   return (
     <div className={style.wrapper}>

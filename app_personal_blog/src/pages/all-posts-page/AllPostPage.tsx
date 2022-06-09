@@ -9,6 +9,7 @@ import { Title } from '../../ui/title/Title';
 import { setSelectedPost } from '../../features/posts/SelectedPostSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { CardPost } from '../../ui/card/card-post/CardPost';
+import { PostCardList } from '../../features/posts/card-list/PostCardList';
 
 type AllPostPageProps = {};
 
@@ -45,10 +46,9 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
           </div>
         }
       >
-        <CardList
-          data={posts ?? []}
+        <PostCardList
           onPreViewClick={(id) => dispatch(setSelectedPost(id))}
-        ></CardList>
+        ></PostCardList>
       </ContentTemplate>
     </div>
   );

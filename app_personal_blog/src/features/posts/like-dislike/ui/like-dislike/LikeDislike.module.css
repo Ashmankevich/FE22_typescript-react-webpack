@@ -1,3 +1,23 @@
 .wrapper {
-   width:40px, 
+   display: flex;
+   justify-content: space-around;
+   width:60px;
+   align-items: center;
+}
+
+.wrapper >* {
+   display: flex;
+   justify-content: space-between;
+}
+
+.count {
+   width: 40px;
+   color: #ff9797;
+   font-weight: 700;
+   margin-left: 5px;
+}
+
+svg path {
+   fill: #ec7979;
+   color: #ff9797;
 }

@@ -1,3 +1,4 @@
+import likeDislike from '../../../features/posts/like-dislike/likeDislikeSlice';
 import style from './CardPost.module.css';
 
 type CardPostProps = {
@@ -7,6 +8,7 @@ type CardPostProps = {
   date: string;
   title: string;
   onPreViewClick?: (id: number) => void;
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
 export const CardPost: React.FC<CardPostProps> = ({
   id,
@@ -15,6 +17,7 @@ export const CardPost: React.FC<CardPostProps> = ({
   date,
   title,
   onPreViewClick,
+  LikeDislike,
 }) => {
   return (
     <div className={style.item} id={`${id}`}>
@@ -25,6 +28,13 @@ export const CardPost: React.FC<CardPostProps> = ({
       <p className={style.text}>{text}</p>
       <div className={style.row}>
         <p className={style.date}>{date}</p>
+        {/*<LikeDislike
+          onLikeClick={() => null}
+          onDisLikeClick={() => null}
+          currentState={'like'}
+          count={22}
+  ></LikeDislike>*/}
+        {LikeDislike ? <LikeDislike id={id} /> : null}
         <div
           className={style.pic}
           onClick={(event) => {
