@@ -1,7 +1,7 @@
 import style from './BurgerBtn.module.css';
-//import { Menu } from '../menu/Menu';
+import { Menu } from '../menu/Menu';
 import { useState } from 'react';
-import { MenuLogOut } from '../menu/MenuLogOut';
+//import { MenuLogOut } from '../menu/MenuLogOut';
 
 type BurgerProps = {
   children?: React.ReactNode;
@@ -20,7 +20,7 @@ export const Burger: React.FC<BurgerProps> = ({ onClick }) => {
     >
       <div className={style.active}></div>
       <div className={isOpen ? `${style.menuOpen}` : `${style.menuClose}`}>
-        <MenuLogOut></MenuLogOut>
+        <Menu></Menu>
       </div>
     </div>
   );

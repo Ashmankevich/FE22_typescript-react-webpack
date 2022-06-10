@@ -2,7 +2,7 @@ li {
    list-style-type: none;
 }
 
-.link a{
+a{
    display: block;
    text-decoration: none;
    color: var(--burger-open-color);
@@ -10,7 +10,7 @@ li {
    width:120px;
 }
 
-.link a:hover{
+a:hover{
    font-weight: 900;
 }
 

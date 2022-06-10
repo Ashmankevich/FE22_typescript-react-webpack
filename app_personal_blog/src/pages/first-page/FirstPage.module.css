@@ -29,8 +29,8 @@
    padding: 0;
 }
 
-span {
-   color: #EC7979;
+.link span {
+   color: #EC7979; 
 }
 
 .button {
