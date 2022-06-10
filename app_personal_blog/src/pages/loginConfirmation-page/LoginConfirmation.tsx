@@ -20,9 +20,9 @@ export const LoginConfirmation: React.FC<LoginConfirmationProps> = () => {
           <span className={style.text}>Your registration is now complited</span>
         </p>
       </AuthorizationTemplate>
-      <Link to={AppPages.LOGIN}>
+      <Link to={AppPages.MAIN}>
         <Button className={style.button} role="presentation">
-          Login
+          Home
         </Button>
       </Link>
     </div>

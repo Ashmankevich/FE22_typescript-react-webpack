@@ -1,0 +1,7 @@
+.active {
+   background: var(--primary-text-color);
+}
+
+.not_active {
+   background: rgb(223, 187, 181);
+}

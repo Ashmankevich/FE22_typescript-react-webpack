@@ -16,3 +16,17 @@
    margin-left: 50px;
    height: 50px;
 }
+
+.overlayContainer {
+   position:relative;
+   height:0;
+   width:100%;
+}
+
+.overlay {
+   position:absolute;
+   height:100vh;
+   width:100%;
+   background-color: rgba(0, 0, 0, 0.8); 
+   z-index: 100;
+}

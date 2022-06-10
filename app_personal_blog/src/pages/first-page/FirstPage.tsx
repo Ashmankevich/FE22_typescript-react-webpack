@@ -1,6 +1,8 @@
 import style from './FirstPage.module.css';
 import { Header } from '../../features/header/Header';
 import { Button } from '../../ui/button/Button';
+import { AppPages } from '../../types';
+import { Link } from 'react-router-dom';
 
 type FirstPageProps = {};
 
@@ -11,9 +13,9 @@ export const FirstPage: React.FC<FirstPageProps> = () => {
         <Header></Header>
         <h1 className={style.title}>
           Make your <br></br>
-          <a className={style.link} href="Online">
-            Blog <span>Online</span>
-          </a>
+          <span className={style.link}>
+            Blog <Link to={AppPages.ALL_POST}>Online</Link>
+          </span>
         </h1>
         <p className={style.text}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,

@@ -9,9 +9,15 @@ type CardListProps = {
     text: string;
     date: string;
   }>;
+  onPreViewClick?: (id: number) => void;
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
 
-export const CardList: React.FC<CardListProps> = ({ data }) => {
+export const CardList: React.FC<CardListProps> = ({
+  data,
+  onPreViewClick,
+  LikeDislike,
+}) => {
   return (
     <div className={style.cardList}>
       {data.map((item) => (
@@ -22,6 +28,8 @@ export const CardList: React.FC<CardListProps> = ({ data }) => {
           text={item.text}
           date={item.date}
           title={item.title}
+          onPreViewClick={onPreViewClick}
+          LikeDislike={LikeDislike}
         ></CardPost>
       ))}
     </div>

@@ -6,11 +6,22 @@ import { ContentTemplate } from '../../templates/content/ContentTemplate';
 import { CardList } from '../../ui/card/card-list/CardList';
 import { Button } from '../../ui/button/Button';
 import { Title } from '../../ui/title/Title';
+import { setSelectedPost } from '../../features/posts/SelectedPostSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { CardPost } from '../../ui/card/card-post/CardPost';
+import { PostCardList } from '../../features/posts/card-list/PostCardList';
 
 type AllPostPageProps = {};
 
 export const AllPostPage: React.FC<AllPostPageProps> = () => {
   const [posts, setPosts] = useState<typeof data | null>(null);
+  const selectedPostId = useAppSelector((state) => state.selectedPost.id);
+  const selectedPost =
+    selectedPostId != null
+      ? posts?.find((item) => item.id === selectedPostId)
+      : null;
+  const dispatch = useAppDispatch();
+  console.log(selectedPostId);
   useEffect(() => {
     setTimeout(() => {
       setPosts(data);
@@ -19,6 +30,13 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
 
   return (
     <div className={style.container}>
+      {selectedPostId != null ? (
+        <div className={style.overlayContainer}>
+          <div className={style.overlay}>
+            {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
+          </div>
+        </div>
+      ) : null}
       <Header></Header>
       <ContentTemplate
         title={
@@ -28,7 +46,9 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
           </div>
         }
       >
-        <CardList data={posts ?? []}></CardList>
+        <PostCardList
+          onPreViewClick={(id) => dispatch(setSelectedPost(id))}
+        ></PostCardList>
       </ContentTemplate>
     </div>
   );

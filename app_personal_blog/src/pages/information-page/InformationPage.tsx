@@ -1,7 +1,8 @@
 import style from './InformationPage.module.css';
-import { Header } from '../../features/header/Header';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
+import { Header } from '../../features/header/Header';
 import { Title } from '../../ui/title/Title';
+import { AllTabsContent } from './components/all-tabs/AllTabsContent';
 
 type InformationProps = {};
 
@@ -11,8 +12,9 @@ export const InformationPage: React.FC<InformationProps> = () => {
       <Header></Header>
       <ContentTemplate
         title={<Title className={style.title}>Information</Title>}
-        children={undefined}
-      ></ContentTemplate>
+      >
+        <AllTabsContent></AllTabsContent>
+      </ContentTemplate>
     </div>
   );
 };
