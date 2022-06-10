@@ -12,11 +12,14 @@ const likeDislikeSlice = createSlice({
       if (payload.state === 'like') {
          state[payload.id] = {count: currentCount +1, state:'like'}; 
       } else if (payload.state === 'dislike') {
-         state[payload.id] = {count: currentCount -1, state:'dislike'}; 
+         state[payload.id] = {count: currentCount -2, state:'dislike'}; 
       }
     },
-  },
+    reset(state, {payload}: { payload:{id:string | number} }) {
+      delete state[payload.id]
+    }
+  }, 
 });
 
-export const { setState } = likeDislikeSlice.actions;
+export const { setState, reset } = likeDislikeSlice.actions;
 export default likeDislikeSlice.reducer;
