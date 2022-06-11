@@ -1,0 +1,17 @@
+.container {
+   display: flex;
+}
+
+.userButton {
+   margin: 12px 0 0 80px;
+}
+
+.button {
+   background-color: transparent;
+   color: var(--primary-text-color);
+   padding: 0;
+   margin-left: 10px;
+   border: none;
+   font-size: 20px;
+   margin-top: 10px;
+}

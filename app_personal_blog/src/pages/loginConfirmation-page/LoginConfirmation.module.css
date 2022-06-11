@@ -1,16 +1,17 @@
 .container {
    display: flex;
-   justify-content:center;
+   justify-content: center;
    align-items: center;
    flex-direction: column;
-   max-width: 1200px;
+   background-color: var(--background-color);
    margin: 0 auto;
    padding: 0 30px;
+   height: 100vh;
 }
 
 .row {
    display: flex;
-   justify-content:center;
+   justify-content: center;
    align-items: center;
    flex-direction: column;
    margin-bottom: 30px;
@@ -26,7 +27,7 @@
 }
 
 .button {
-   background-color: #ec7979;
+   background-color: var(--btn-background-color);
    border: none;
    border-radius: 20px;
    font-size: 18px;
@@ -40,4 +41,4 @@
    text-align: center;
    padding: 12px 0 12px 0;
    transition: all 0.3s linear 0s;
-} 
+}

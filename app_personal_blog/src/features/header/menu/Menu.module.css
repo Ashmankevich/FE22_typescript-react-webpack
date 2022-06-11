@@ -2,7 +2,7 @@ li {
    list-style-type: none;
 }
 
-a{
+.link a{
    display: block;
    text-decoration: none;
    color: var(--burger-open-color);

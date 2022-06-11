@@ -1,3 +1,7 @@
+.wrapper {
+   background-color: var(--background-color);
+}
+
 .container {
    display: flex;
    max-width: 1200px;
@@ -6,15 +10,15 @@
 }
 
 .page {
-   padding-top:150px;
+   padding-top: 150px;
    flex-basis: 40%;
-   display:flex;
+   display: flex;
    flex-direction: column;
    align-items: flex-start;
 }
 
 .title {
-   color:whitesmoke;
+   color: whitesmoke;
    font-size: 40px;
 }
 
@@ -30,7 +34,7 @@
 }
 
 .link span {
-   color: #EC7979; 
+   color: #ec7979;
 }
 
 .button {
@@ -42,4 +46,5 @@
    text-transform: capitalize;
    text-align: center;
    transition: all 0.3s linear 0s;
-} 
+   margin-bottom: 100px;
+}

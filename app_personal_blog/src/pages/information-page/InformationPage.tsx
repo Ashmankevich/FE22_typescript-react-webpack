@@ -8,13 +8,15 @@ type InformationProps = {};
 
 export const InformationPage: React.FC<InformationProps> = () => {
   return (
-    <div className={style.container}>
-      <Header></Header>
-      <ContentTemplate
-        title={<Title className={style.title}>Information</Title>}
-      >
-        <AllTabsContent></AllTabsContent>
-      </ContentTemplate>
+    <div className={style.wrapper}>
+      <div className={style.container}>
+        <Header></Header>
+        <ContentTemplate
+          title={<Title className={style.title}>Information</Title>}
+        >
+          <AllTabsContent></AllTabsContent>
+        </ContentTemplate>
+      </div>
     </div>
   );
 };

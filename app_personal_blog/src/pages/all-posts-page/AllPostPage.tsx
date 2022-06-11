@@ -3,7 +3,6 @@ import data from './data.json';
 import { useEffect, useState } from 'react';
 import { Header } from '../../features/header/Header';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
-import { CardList } from '../../ui/card/card-list/CardList';
 import { Button } from '../../ui/button/Button';
 import { Title } from '../../ui/title/Title';
 import { setSelectedPost } from '../../features/posts/SelectedPostSlice';
@@ -29,27 +28,29 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
   }, []);
 
   return (
-    <div className={style.container}>
-      {selectedPostId != null ? (
-        <div className={style.overlayContainer}>
-          <div className={style.overlay}>
-            {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
+    <div className={style.wrapper}>
+      <div className={style.container}>
+        {selectedPostId != null ? (
+          <div className={style.overlayContainer}>
+            <div className={style.overlay}>
+              {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
+            </div>
           </div>
-        </div>
-      ) : null}
-      <Header></Header>
-      <ContentTemplate
-        title={
-          <div className={style.row}>
-            <Title>My posts</Title>
-            <Button className={style.button}>+Add</Button>
-          </div>
-        }
-      >
-        <PostCardList
-          onPreViewClick={(id) => dispatch(setSelectedPost(id))}
-        ></PostCardList>
-      </ContentTemplate>
+        ) : null}
+        <Header></Header>
+        <ContentTemplate
+          title={
+            <div className={style.row}>
+              <Title>My posts</Title>
+              <Button className={style.button}>+Add</Button>
+            </div>
+          }
+        >
+          <PostCardList
+            onPreViewClick={(id) => dispatch(setSelectedPost(id))}
+          ></PostCardList>
+        </ContentTemplate>
+      </div>
     </div>
   );
 };

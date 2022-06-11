@@ -1,5 +1,5 @@
 .active {
-   background: var(--primary-text-color);
+   background: var(--btn-background-color);
 }
 
 .not_active {

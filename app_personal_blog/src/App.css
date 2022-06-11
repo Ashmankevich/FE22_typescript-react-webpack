@@ -1,23 +1,26 @@
-html,
-.app {
-   --primary-text-color: #EC7979;
+#root {
+   --ls-background-color: rgba(167, 114, 162, 0.521);
+   --ds-background-color: rgba(173, 32, 143, 0.527);
+   --ls-btn-background-color: #ec7979;
+   --ds-btn-background-color: #2b5e31d0;
+   --primary-text-color: #ec7979;
+
+   --background-color: var(--ls-background-color);
+   --btn-background-color: var(--ls-btn-background-color);
+   /*to need refactor prop below*/
    --secondary-text-color: grey;
-   --menu-color: rgb(214, 123, 140);
-   --blue-background-color: blue; 
+   --menu-color: rgb(231, 126, 145);
    --burger-open-color: whitesmoke;
-  background-image: url("../src/ui/cover/Cover1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
 }
 
-@media (prefers-color-scheme:dark) {
-   .app {
+@media (prefers-color-scheme: dark) {
+   #root {
+      --background-color: var(--ds-background-color);
+      --btn-background-color: var(--ds-btn-background-color);
+      /*to need refactor prop below*/
       --primary-text-color: #725858;
       --secondary-text-color: rgb(126, 37, 37);
       --menu-color: rgb(88, 188, 255);
-      --blue-background-color: rgb(70, 146, 34); 
       --burger-open-color: rgb(150, 78, 78);
-   } 
+   }
 }
