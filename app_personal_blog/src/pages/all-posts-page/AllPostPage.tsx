@@ -14,13 +14,13 @@ type AllPostPageProps = {};
 
 export const AllPostPage: React.FC<AllPostPageProps> = () => {
   const [posts, setPosts] = useState<typeof data | null>(null);
+  const [popUp, setPopUp] = useState(false);
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
       ? posts?.find((item) => item.id === selectedPostId)
       : null;
   const dispatch = useAppDispatch();
-  console.log(selectedPostId);
   useEffect(() => {
     setTimeout(() => {
       setPosts(data);
@@ -28,28 +28,31 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
   }, []);
 
   return (
-    <div className={style.wrapper}>
-      <div className={style.container}>
-        {selectedPostId != null ? (
-          <div className={style.overlayContainer}>
-            <div className={style.overlay}>
-              {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
-            </div>
+    <div>
+      {selectedPostId != null ? (
+        <div className={style.overlayContainer}>
+          <div className={style.overlay}>
+            {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
+            <span className={style.overlay_close}>X</span>
           </div>
-        ) : null}
-        <Header></Header>
-        <ContentTemplate
-          title={
-            <div className={style.row}>
-              <Title>My posts</Title>
-              <Button className={style.button}>+Add</Button>
-            </div>
-          }
-        >
-          <PostCardList
-            onPreViewClick={(id) => dispatch(setSelectedPost(id))}
-          ></PostCardList>
-        </ContentTemplate>
+        </div>
+      ) : null}
+      <div className={style.wrapper}>
+        <div className={style.container}>
+          <Header></Header>
+          <ContentTemplate
+            title={
+              <div className={style.row}>
+                <Title>My posts</Title>
+                <Button className={style.button}>+Add</Button>
+              </div>
+            }
+          >
+            <PostCardList
+              onPreViewClick={(id) => dispatch(setSelectedPost(id))}
+            ></PostCardList>
+          </ContentTemplate>
+        </div>
       </div>
     </div>
   );
