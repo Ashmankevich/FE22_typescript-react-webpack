@@ -29,14 +29,6 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
 
   return (
     <div>
-      {selectedPostId != null ? (
-        <div className={style.overlayContainer}>
-          <div className={style.overlay}>
-            {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
-            <span className={style.overlay_close}>X</span>
-          </div>
-        </div>
-      ) : null}
       <div className={style.wrapper}>
         <div className={style.container}>
           <Header></Header>
@@ -49,11 +41,33 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
             }
           >
             <PostCardList
-              onPreViewClick={(id) => dispatch(setSelectedPost(id))}
+              onPreViewClick={(id) => {
+                dispatch(setSelectedPost(id));
+                setPopUp(true);
+              }}
             ></PostCardList>
           </ContentTemplate>
         </div>
       </div>
+      {selectedPostId != null ? (
+        <div
+          className={
+            popUp
+              ? `${style.overlayContainer}`
+              : `${style.overlayContainerNone}`
+          }
+        >
+          <div className={style.overlay}>
+            {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
+            <span
+              className={style.btn_close}
+              onClick={() => {
+                setPopUp(false);
+              }}
+            ></span>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
