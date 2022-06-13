@@ -1,19 +1,19 @@
-li {
+.link {
    list-style-type: none;
 }
 
-.link a{
+.link a {
    display: block;
    text-decoration: none;
    color: var(--burger-open-color);
    padding: 0 40px;
-   width:120px;
+   width: 120px;
 }
 
-a:hover{
+.link:hover {
    font-weight: 900;
 }
 
-ul {
+.row {
    display: flex;
 }

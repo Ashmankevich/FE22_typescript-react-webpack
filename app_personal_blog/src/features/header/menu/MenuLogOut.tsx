@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AppPages } from '../../../types';
-import style from './Menu.module.css';
+import style from './MenuAllState.module.css';
 
 type MenuLogOutProps = {
   children?: React.ReactNode;
@@ -9,7 +9,7 @@ type MenuLogOutProps = {
 export const MenuLogOut: React.FC<MenuLogOutProps> = () => {
   return (
     <nav>
-      <ul>
+      <ul className={style.row}>
         <li className={style.link}>
           <Link to={AppPages.LOGIN}>Login</Link>
         </li>
