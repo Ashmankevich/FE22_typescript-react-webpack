@@ -22,7 +22,7 @@ export const Burger: React.FC<BurgerProps> = ({ onClick }) => {
         <UserButton>Username</UserButton>
       </div>
       <div className={isOpen ? `${style.menuOpen}` : `${style.menuClose}`}>
-        <MenuNav isAuthorized={'true'}></MenuNav>
+        <MenuNav isAuthorized={true}></MenuNav>
       </div>
     </div>
   );
