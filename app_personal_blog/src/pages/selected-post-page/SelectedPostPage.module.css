@@ -1,3 +1,7 @@
+.wrapper {
+   background-color: var(--background-color);
+}
+
 .container {
    max-width: 1200px;
    margin: 0 auto;
@@ -5,11 +9,11 @@
 }
 
 .row {
-padding-bottom: 200px;
-max-width: 40%;
+   padding-bottom: 200px;
+   max-width: 40%;
 }
 
 .post {
-margin-top: -40px;
-padding-top: 150px;
+   margin-top: -40px;
+   padding-top: 150px;
 }

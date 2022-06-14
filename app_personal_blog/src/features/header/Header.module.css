@@ -5,7 +5,18 @@
    padding: 20px;
    width: 100%;
    z-index: 20;
- }
- .headerIsOpen {
+}
+
+.headerIsOpen {
    background-color: var(--menu-color);
- }
+}
+
+.switсher {
+   margin: 20px 0 0 500px;
+}
+
+.text {
+   font-size: 20px;
+   margin-left: 5px;
+   color: var(--primary-text-color);
+}

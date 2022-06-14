@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
 import { AppPages } from '../../../types';
-import style from './Menu.module.css';
+import style from './MenuAllState.module.css';
 
-type MenuProps = {
+type MenuLogInProps = {
   children?: React.ReactNode;
+  className?: string;
 };
 
-export const Menu: React.FC<MenuProps> = () => {
+export const MenuLogIn: React.FC<MenuLogInProps> = () => {
   return (
     <nav>
-      <ul>
+      <ul className={style.row}>
         <li className={style.link}>
           <a href="All post">All posts</a>
         </li>
