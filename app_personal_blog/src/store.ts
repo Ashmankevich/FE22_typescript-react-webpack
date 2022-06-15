@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import selectedPostReducer from './features/posts/SelectedPostSlice';
 import likeDislikeReducer from './features/posts/like-dislike/likeDislikeSlice';
+import markPostReducer from './features/posts/mark-post/markPostSlice';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './sagas';
 
@@ -11,6 +12,7 @@ export const store = configureStore({
    reducer: {
       selectedPost: selectedPostReducer,
       likeDislike: likeDislikeReducer,
+      markPost: markPostReducer,
    },
    middleware: (getDefaultMiddleware) =>
    getDefaultMiddleware().concat(middleware),

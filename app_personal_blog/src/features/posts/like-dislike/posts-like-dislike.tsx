@@ -24,8 +24,8 @@ export const PostLikeDislike: React.FC<PostsLikeDislikeProps> = ({ id }) => {
   };
   return (
     <LikeDislike
-      onLikeClick={() => onLikeClick}
-      onDisLikeClick={() => onDisLikeClick}
+      onLikeClick={() => onLikeClick()}
+      onDisLikeClick={() => onDisLikeClick()}
       currentState={state}
       count={count}
     ></LikeDislike>
