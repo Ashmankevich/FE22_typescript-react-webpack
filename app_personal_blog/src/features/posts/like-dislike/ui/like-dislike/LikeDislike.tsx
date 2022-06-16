@@ -68,7 +68,7 @@ export const LikeDislike: React.FC<LikeDislikeProps> = ({
       </div>
       <div>
         {currentState === 'dislike' ? PressedDisLike : DisLike}
-        <div className={style.count}>{count > 0 ? Math.abs(count) : null}</div>
+        <div className={style.count}>{count < 0 ? Math.abs(count) : null}</div>
       </div>
     </div>
   );

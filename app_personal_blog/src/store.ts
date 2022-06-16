@@ -10,7 +10,7 @@ const middleware = [sagaMiddleware]
 
 export const store = configureStore({
    reducer: {
-      selectedPost: selectedPostReducer,
+      selectedPost: selectedPostReducer, //поле в сторе, где хранятся данные 
       likeDislike: likeDislikeReducer,
       markPost: markPostReducer,
    },

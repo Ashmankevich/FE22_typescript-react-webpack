@@ -1,14 +1,14 @@
-import style from './LikeDislike.module.css';
+import style from './MarkPost.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { faBookmark as pressedMark } from '@fortawesome/free-solid-svg-icons';
 
-type MarkDisMarkProps = {
+type MarkPostProps = {
   onMarkClick: () => void;
   currentState: 'markOn' | 'markOf' | null;
 };
 
-export const MarkPost: React.FC<MarkDisMarkProps> = ({
+export const MarkPost: React.FC<MarkPostProps> = ({
   onMarkClick,
   currentState,
 }) => {

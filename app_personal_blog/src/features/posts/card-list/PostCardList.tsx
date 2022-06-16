@@ -5,7 +5,7 @@ import { PostMarkDismark } from '../mark-post/posts-mark-dismark';
 import data from './data.json';
 
 type PostCardListProps = {
-  onPreViewClick?: (id: number) => void;
+  onPreViewClick?: (id: string | number) => void;
 };
 export const PostCardList: React.FC<PostCardListProps> = ({
   onPreViewClick,

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import markPostSlice, { setState } from './markPostSlice';
+import { setState } from './markPostSlice';
 import { MarkPost } from './ui/MarkPost';
 
 type PostMarkDismarkProps = {
@@ -9,7 +9,7 @@ type PostMarkDismarkProps = {
 
 export const PostMarkDismark: React.FC<PostMarkDismarkProps> = ({ id }) => {
   const { state } = useAppSelector(
-    (state) => state.markPost[id] ?? {state: 'markOf' }
+    (state) => state.markPost[id] ?? { state: 'markOf' }
   );
   const dispatch = useAppDispatch();
   const onMarkClick = () => {
@@ -21,11 +21,6 @@ export const PostMarkDismark: React.FC<PostMarkDismarkProps> = ({ id }) => {
   };
 
   return (
-<MarkPost
-onMarkClick={() => onMarkClick}
-currentState={state}
-></MarkPost>
+    <MarkPost onMarkClick={() => onMarkClick()} currentState={state}></MarkPost>
   );
 };
-
-

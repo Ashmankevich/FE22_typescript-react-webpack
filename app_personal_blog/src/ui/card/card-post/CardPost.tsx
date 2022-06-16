@@ -1,5 +1,3 @@
-import likeDislike from '../../../features/posts/like-dislike/likeDislikeSlice';
-import { MarkPost } from '../../../features/posts/mark-post/ui/MarkPost';
 import style from './CardPost.module.css';
 
 type CardPostProps = {
@@ -10,6 +8,7 @@ type CardPostProps = {
   title: string;
   onPreViewClick?: (id: number) => void;
   LikeDislike?: React.ComponentType<{ id: string | number }>;
+  MarkPost?: React.ComponentType<{ id: string | number }>;
 };
 export const CardPost: React.FC<CardPostProps> = ({
   id,
@@ -19,6 +18,7 @@ export const CardPost: React.FC<CardPostProps> = ({
   title,
   onPreViewClick,
   LikeDislike,
+  MarkPost,
 }) => {
   return (
     <div className={style.item} id={`${id}`}>
