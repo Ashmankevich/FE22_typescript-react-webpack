@@ -8,12 +8,16 @@ import { Text } from '../../../ui/text/Text';
 import { Title } from '../../../ui/title/Title';
 import { Link } from 'react-router-dom';
 import { AppPages } from '../../../types';
+import { useAppDispatch } from '../../../hooks';
+import { login } from '../../auth/authSlice';
 
 type LoginFormProps = {};
 
 export const LoginForm: React.FC<LoginFormProps> = () => {
-  const [emailValue, setEmailValue] = useState('jimiswank@gmail.com');
-  const [passwordValue, setPasswordValue] = useState('123456');
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const dispatch = useAppDispatch();
+
   return (
     <div className={style.container}>
       <AuthorizationTemplate
@@ -28,7 +32,13 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           </Title>
         }
       >
-        <form className={style.form}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(login({ email: emailValue, password: passwordValue }));
+          }}
+          className={style.form}
+        >
           <Email
             value={emailValue}
             onChange={(event) => setEmailValue(event.target.value)}
@@ -37,17 +47,17 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
             value={passwordValue}
             onChange={(event) => setPasswordValue(event.target.value)}
           ></Password>
+          <Button className={style.button} type="submit">
+            Login
+          </Button>
         </form>
+        <Text className={style.text}>
+          Forgot your password?{' '}
+          <span className={style.link}>
+            <Link to={AppPages.REGISTRATION}>Reset password</Link>
+          </span>
+        </Text>
       </AuthorizationTemplate>
-      <Link to={AppPages.LOGIN_CONFIRMATION}>
-        <Button className={style.button}>Login</Button>
-      </Link>
-      <Text>
-        Forgot your password?{' '}
-        <span className={style.link}>
-          <Link to={AppPages.REGISTRATION}>Reset password</Link>
-        </span>
-      </Text>
     </div>
   );
 };

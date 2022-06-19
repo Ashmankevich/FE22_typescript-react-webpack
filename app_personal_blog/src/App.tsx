@@ -11,6 +11,7 @@ import { InformationPage } from './pages/information-page/InformationPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppPages } from './types';
 import { AppContext } from './AppContext';
+import { ActivatePage } from './pages/activate-page/ActivatePage';
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -19,6 +20,10 @@ function App() {
       <AppContext.Provider value={appRef}>
         <BrowserRouter>
           <Routes>
+            <Route
+              path={`${AppPages.ACTIVATE}/:uid/:token`}
+              element={<ActivatePage></ActivatePage>}
+            ></Route>
             <Route
               path={AppPages.ALL_POST}
               element={<AllPostPage></AllPostPage>}

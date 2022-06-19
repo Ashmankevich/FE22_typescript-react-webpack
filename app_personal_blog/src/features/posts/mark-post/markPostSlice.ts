@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'; //слайсы генерируют обычные редьюсеры и действия, которые затем передаются в Редакс
 
 const markPostSlice = createSlice({
   name: 'markPost',

@@ -34,7 +34,6 @@
    display: flex;
    align-items: center;
    flex-direction: column;
-   margin-bottom: 40px;
 }
 
 .button {
@@ -52,7 +51,7 @@
    text-transform: capitalize;
    text-align: center;
    padding: 12px 0 12px 0;
-   margin-bottom: 20px;
+   margin: 20px 0 8px 0;
    transition: all 0.3s linear 0s;
 }
 
@@ -66,4 +65,9 @@
    box-shadow: 0px 0px 10px 0px #ab4949 inset;
    color: #fff;
    background-color: #ec7979;
+}
+
+.text {
+   text-align: center;
+   margin-bottom: 150px;
 }
