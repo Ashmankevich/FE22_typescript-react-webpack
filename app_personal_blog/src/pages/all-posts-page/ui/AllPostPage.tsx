@@ -1,14 +1,14 @@
 import style from './AllPostPage.module.css';
-import data from './data.json';
+import data from '../data.json';
 import { useEffect, useState } from 'react';
-import { Header } from '../../features/header/Header';
-import { ContentTemplate } from '../../templates/content/ContentTemplate';
-import { Button } from '../../ui/button/Button';
-import { Title } from '../../ui/title/Title';
-import { setSelectedPost } from '../../features/posts/SelectedPostSlice';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { CardPost } from '../../ui/card/card-post/CardPost';
-import { PostCardList } from '../../features/posts/card-list/PostCardList';
+import { Header } from '../../../features/header/Header';
+import { ContentTemplate } from '../../../templates/content/ContentTemplate';
+import { Button } from '../../../ui/button/Button';
+import { Title } from '../../../ui/title/Title';
+import { setSelectedPost } from '../../../features/posts/SelectedPostSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { CardPost } from '../../../ui/card/card-post/CardPost';
+import { PostCardList } from '../../../features/posts/card-list/PostCardList';
 
 type AllPostPageProps = {};
 
