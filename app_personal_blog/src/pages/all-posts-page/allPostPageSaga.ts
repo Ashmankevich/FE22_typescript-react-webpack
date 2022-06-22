@@ -1,19 +1,19 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'typed-redux-saga/dist';
 import {
   AllPostFetch,
   AllPostSuccess,
   AllPostFailure,
-} from './AllPostPageSlice';
-import { getPostsFetch } from './api';
+} from './allPostPageSlice';
+import { PostsFetch } from './api';
 
 export function* allPostPageSaga() {
-  yield takeEvery(getPostsFetch, function* () {
+  yield takeEvery(AllPostFetch, function* () {
     try {
-      const result = yield* call(AllPostFetch);
+      const result = yield* call(PostsFetch);
       yield* put(AllPostSuccess(result));
     } catch (e) {
       if (e instanceof Error) {
-        yield* put(AllPostFailure(e.message));
+        yield* put(AllPostFailure());
       }
     }
   });

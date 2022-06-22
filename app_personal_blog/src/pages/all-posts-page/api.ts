@@ -1,6 +1,8 @@
-export async function getPostsFetch() {
+export async function PostsFetch() {
   try {
-    const result = await fetch('https://studapi.teachmeskills.by/blog/posts');
+    const result = await fetch(
+      'https://studapi.teachmeskills.by/blog/posts/?limit=4&offset=4'
+    );
     if (!result.ok) {
       const errorText = await result.text();
       throw new Error(errorText);

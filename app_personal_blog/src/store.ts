@@ -3,7 +3,7 @@ import selectedPostReducer from './features/posts/SelectedPostSlice';
 import likeDislikeReducer from './features/posts/like-dislike/likeDislikeSlice';
 import markPostReducer from './features/posts/mark-post/markPostSlice';
 import authReducer from './features/auth/authSlice';
-import allPostReducer from './pages/all-posts-page/AllPostPageSlice';
+import allPostReducer from './pages/all-posts-page/allPostPageSlice';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './sagas';
 

@@ -1,10 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { allPostsResponse } from './types';
 
 const AllPostSlice = createSlice({
   name: 'AllPost',
   initialState: {
     posts: [],
     isLoading: false,
+  } as {
+    posts: allPostsResponse[];
+    isLoading: boolean;
   },
   reducers: {
     AllPostFetch: (state) => {
