@@ -10,15 +10,18 @@ import { AuthorizationTemplate } from '../../../templates/authorization/Authoriz
 import { Button } from '../../../ui/button/Button';
 import { AppPages } from '../../../types';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../../hooks';
+import { register } from '../../auth/authSlice';
 
 type RegistrationFormProps = {};
 
 export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
-  const [userNameValue, setUserNameValue] = useState('James');
-  const [emailValue, setEmailValue] = useState('jimiswank@gmail.com');
-  const [passwordValue, setPasswordValue] = useState('123456');
-  const [passwordConfirmValue, setPasswordConfirmValue] = useState('123456');
+  const [userNameValue, setUserNameValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [passwordConfirmValue, setPasswordConfirmValue] = useState('');
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   return (
     <div className={style.container}>
       <AuthorizationTemplate
@@ -33,7 +36,19 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
           </Title>
         }
       >
-        <form className={style.form}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(
+              register({
+                email: emailValue,
+                password: passwordValue,
+                username: userNameValue,
+              })
+            );
+          }}
+          className={style.form}
+        >
           <UserName
             value={userNameValue}
             onChange={(event) => setUserNameValue(event.target.value)}
@@ -50,20 +65,21 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = () => {
             value={passwordConfirmValue}
             onChange={(event) => setPasswordConfirmValue(event.target.value)}
           ></PasswordConfirm>
+          <Button
+            type="submit"
+            className={style.button}
+            onClick={() => navigate(AppPages.REGISTRATION_CONFIRMATION)}
+          >
+            Registration
+          </Button>
         </form>
+        <Text className={style.text}>
+          If you have account you can{' '}
+          <span className={style.link}>
+            <Link to={AppPages.LOGIN}>login</Link>
+          </span>
+        </Text>
       </AuthorizationTemplate>
-      <Button
-        className={style.button}
-        onClick={() => navigate(AppPages.REGISTRATION_CONFIRMATION)}
-      >
-        Registration
-      </Button>
-      <Text>
-        If you have account you can{' '}
-        <span className={style.link}>
-          <Link to={AppPages.LOGIN}>login</Link>
-        </span>
-      </Text>
     </div>
   );
 };

@@ -1,8 +1,9 @@
 .wrapper {
    display: flex;
    justify-content: space-around;
-   width: 60px;
+   width: 50px;
    align-items: center;
+   margin-left: 60px;
 }
 
 .wrapper > * {

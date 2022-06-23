@@ -1,31 +1,31 @@
 import style from './AllPostPage.module.css';
-import data from './data.json';
 import { useEffect, useState } from 'react';
-import { Header } from '../../features/header/Header';
-import { ContentTemplate } from '../../templates/content/ContentTemplate';
-import { Button } from '../../ui/button/Button';
-import { Title } from '../../ui/title/Title';
-import { setSelectedPost } from '../../features/posts/SelectedPostSlice';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { CardPost } from '../../ui/card/card-post/CardPost';
-import { PostCardList } from '../../features/posts/card-list/PostCardList';
+import { Header } from '../../../features/header/Header';
+import { ContentTemplate } from '../../../templates/content/ContentTemplate';
+import { Button } from '../../../ui/button/Button';
+import { Title } from '../../../ui/title/Title';
+import { setSelectedPost } from '../../../features/posts/SelectedPostSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { CardPost } from '../../../ui/card/card-post/CardPost';
+import { PostCardList } from '../../../features/posts/card-list/PostCardList';
+import { AllPostFetch } from '../allPostPageSlice';
 
 type AllPostPageProps = {};
 
 export const AllPostPage: React.FC<AllPostPageProps> = () => {
-  const [posts, setPosts] = useState<typeof data | null>(null);
   const [popUp, setPopUp] = useState(false);
+  const allPosts = useAppSelector((state) => state.allPost.posts);
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
-      ? posts?.find((item) => item.id === selectedPostId)
+      ? allPosts?.find(
+          (item: { id: string | number }) => item.id === selectedPostId
+        )
       : null;
   const dispatch = useAppDispatch();
   useEffect(() => {
-    setTimeout(() => {
-      setPosts(data);
-    }, 1000);
-  }, []);
+    dispatch(AllPostFetch());
+  }, [dispatch]);
 
   return (
     <div>

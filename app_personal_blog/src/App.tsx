@@ -6,11 +6,12 @@ import { LoginConfirmation } from './pages/loginConfirmation-page/LoginConfirmat
 import { RegistrationPage } from './pages/registration-page/RegistrationPage';
 import { RegistrationConfirmation } from './pages/registrationConfirmation-page/RegistrationConfirmation';
 import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
-import { AllPostPage } from './pages/all-posts-page/AllPostPage';
+import { AllPostPage } from './pages/all-posts-page/ui/AllPostPage';
 import { InformationPage } from './pages/information-page/InformationPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppPages } from './types';
 import { AppContext } from './AppContext';
+import { ActivatePage } from './pages/activate-page/ActivatePage';
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -19,6 +20,10 @@ function App() {
       <AppContext.Provider value={appRef}>
         <BrowserRouter>
           <Routes>
+            <Route
+              path={`${AppPages.ACTIVATE}/:uid/:token`}
+              element={<ActivatePage></ActivatePage>}
+            ></Route>
             <Route
               path={AppPages.ALL_POST}
               element={<AllPostPage></AllPostPage>}
