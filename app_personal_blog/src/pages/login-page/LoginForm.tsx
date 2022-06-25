@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { AuthorizationTemplate } from '../../../templates/authorization/AuthorizationTemplate';
+import { AuthorizationTemplate } from '../../templates/authorization/AuthorizationTemplate';
 import style from './LoginForm.module.css';
-import { Button } from '../../../ui/button/Button';
-import { Email } from '../../../ui/input/Email';
-import { Password } from '../../../ui/input/Password';
-import { Text } from '../../../ui/text/Text';
-import { Title } from '../../../ui/title/Title';
+import { Button } from '../../ui/button/Button';
+import { Text } from '../../ui/text/Text';
+import { Title } from '../../ui/title/Title';
 import { Link } from 'react-router-dom';
-import { AppPages } from '../../../types';
-import { useAppDispatch } from '../../../hooks';
-import { login } from '../../auth/authSlice';
+import { AppPages } from '../../types';
+import { useAppDispatch } from '../../hooks';
+import { login } from '../../features/auth/authSlice';
+import { Input } from '../../ui/input/Input';
+import { Header } from '../../features/header/Header';
 
 type LoginFormProps = {};
 
@@ -20,13 +20,14 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
 
   return (
     <div className={style.container}>
+      <Header></Header>
       <AuthorizationTemplate
         title={
           <Title>
             <div className={style.row}>
               <span className={style.title__disable}>Login |</span>
               <span className={style.title__active}>
-                <Link to={AppPages.REGISTRATION}>Registration</Link>
+                <Link to={AppPages.REGISTRATION_FORM}>Registration</Link>
               </span>
             </div>
           </Title>
@@ -39,14 +40,18 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           }}
           className={style.form}
         >
-          <Email
+          <Input
+            label="Email"
+            type="email"
             value={emailValue}
             onChange={(event) => setEmailValue(event.target.value)}
-          ></Email>
-          <Password
+          ></Input>
+          <Input
+            label="Password"
+            type="password"
             value={passwordValue}
             onChange={(event) => setPasswordValue(event.target.value)}
-          ></Password>
+          ></Input>
           <Button className={style.button} type="submit">
             Login
           </Button>
@@ -54,7 +59,7 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
         <Text className={style.text}>
           Forgot your password?{' '}
           <span className={style.link}>
-            <Link to={AppPages.REGISTRATION}>Reset password</Link>
+            <Link to={AppPages.REGISTRATION_FORM}>Reset password</Link>
           </span>
         </Text>
       </AuthorizationTemplate>

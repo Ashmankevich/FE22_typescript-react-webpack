@@ -1,20 +1,27 @@
 import style from './Input.module.css';
 
-type EmailProps = {
+type InputProps = {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  type: string;
+  label: string;
 };
 
-export const Email: React.FC<EmailProps> = ({ value, onChange }) => {
+export const Input: React.FC<InputProps> = ({
+  value,
+  onChange,
+  label,
+  type,
+}) => {
   return (
     <label className={style.label}>
-      Email
+      {label}
       <input
-        type="email"
+        className={style.input}
+        type={type}
         value={value}
         onChange={onChange}
-        className={style.input_form}
-      ></input>
+      />
     </label>
   );
 };

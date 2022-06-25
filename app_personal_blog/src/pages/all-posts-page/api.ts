@@ -1,4 +1,4 @@
-export async function PostsFetch() {
+export async function postsFetch() {
   try {
     const result = await fetch(
       'https://studapi.teachmeskills.by/blog/posts/?limit=4&offset=4'

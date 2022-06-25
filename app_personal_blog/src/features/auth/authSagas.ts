@@ -7,6 +7,9 @@ import {
   login,
   loginFailure,
   loginSuccess,
+  refresh,
+  refreshFailure,
+  refreshSuccess,
   register,
   registerFailure,
   registerSuccess,
@@ -16,12 +19,14 @@ export function* registerSaga() {
   yield takeLatest(register, function* (action) {
     try {
       const result = yield* call(AuthApi.register, action.payload);
+      console.log(result);
       yield* put(registerSuccess(result));
     } catch (e) {
       if (e instanceof Error) {
         yield* put(registerFailure(e.message));
       }
     }
+    console.log(action);
   });
 }
 
@@ -43,13 +48,15 @@ export function* activateSaga() {
 export function* loginSaga() {
   yield takeLatest(login, function* (action) {
     try {
-      const result = yield* call(AuthApi.login, action.payload);
-      yield* put(loginSuccess(result));
+      const LoginResponse = yield* call(AuthApi.login, action.payload);
+      console.log(LoginResponse);
+      yield* put(loginSuccess(LoginResponse));
     } catch (e) {
       if (e instanceof Error) {
         yield* put(loginFailure(e.message));
       }
     }
+    console.log(action);
   });
 }
 
@@ -64,6 +71,35 @@ export function* loginSuccessSaga() {
       [localStorage, 'setItem'],
       'refresh-token',
       action.payload.refresh
+    );
+  });
+}
+
+export function* refreshSaga() {
+  yield takeLatest(refresh, function* () {
+    const RefreshToken4 = yield* call(
+      [localStorage, 'getItem'],
+      'refresh-token'
+    ); // localStorage.getItem('refrsh-token')
+    if (RefreshToken4) {
+      try {
+        const responce = yield* call(AuthApi.refresh, RefreshToken4);
+        yield* put(refreshSuccess(responce));
+      } catch (e) {
+        if (e instanceof Error) {
+          yield* put(refreshFailure(e.message));
+        }
+      }
+    }
+  });
+}
+
+export function* refreshSuccessSaga() {
+  yield takeLatest(refreshSuccess, function* (action) {
+    yield* call(
+      [localStorage, 'setItem'],
+      'access-token',
+      action.payload.access
     );
   });
 }

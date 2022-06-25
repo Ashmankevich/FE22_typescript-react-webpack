@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
 import { FirstPage } from './pages/first-page/FirstPage';
-import { LoginPage } from './pages/login-page/LoginPage';
 import { LoginConfirmation } from './pages/loginConfirmation-page/LoginConfirmation';
-import { RegistrationPage } from './pages/registration-page/RegistrationPage';
 import { RegistrationConfirmation } from './pages/registrationConfirmation-page/RegistrationConfirmation';
 import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
 import { AllPostPage } from './pages/all-posts-page/ui/AllPostPage';
@@ -12,6 +10,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppPages } from './types';
 import { AppContext } from './AppContext';
 import { ActivatePage } from './pages/activate-page/ActivatePage';
+import { RegistrationForm } from './pages/registration-page/RegistrationForm';
+import { LoginForm } from './pages/login-page/LoginForm';
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -33,8 +33,8 @@ function App() {
               element={<InformationPage></InformationPage>}
             ></Route>
             <Route
-              path={AppPages.LOGIN}
-              element={<LoginPage></LoginPage>}
+              path={AppPages.LOGIN_FORM}
+              element={<LoginForm></LoginForm>}
             ></Route>
             <Route
               path={AppPages.LOGIN_CONFIRMATION}
@@ -45,8 +45,8 @@ function App() {
               element={<FirstPage></FirstPage>}
             ></Route>
             <Route
-              path={AppPages.REGISTRATION}
-              element={<RegistrationPage></RegistrationPage>}
+              path={AppPages.REGISTRATION_FORM}
+              element={<RegistrationForm></RegistrationForm>}
             ></Route>
             <Route
               path={AppPages.REGISTRATION_CONFIRMATION}
