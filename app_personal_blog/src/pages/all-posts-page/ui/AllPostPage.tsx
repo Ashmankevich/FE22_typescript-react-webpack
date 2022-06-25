@@ -11,6 +11,7 @@ import { CardPost } from '../../../ui/card/card-post/CardPost';
 import { PostCardList } from '../../../features/posts/card-list/PostCardList';
 import { AllPostFetch } from '../allPostPageSlice';
 import { refresh } from '../../../features/auth/authSlice';
+import { getUser } from '../../../features/user/userSlice';
 
 type AllPostPageProps = {};
 
@@ -27,6 +28,7 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
     setTimeout(() => {
       setPosts(data);
     }, 1000);
+    dispatch(getUser());
     dispatch(AllPostFetch());
     dispatch(refresh());
   }, [dispatch]);

@@ -5,6 +5,7 @@ import markPostReducer from './features/posts/mark-post/markPostSlice';
 import authReducer from './features/auth/authSlice';
 import allPostReducer from './pages/all-posts-page/allPostPageSlice';
 import createSagaMiddleware from 'redux-saga';
+import userReducer from './features/user/userSlice';
 import { rootSaga } from './sagas';
 
 let sagaMiddleware = createSagaMiddleware();
@@ -17,6 +18,7 @@ export const store = configureStore({
     markPost: markPostReducer,
     auth: authReducer,
     allPost: allPostReducer,
+    user: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),
