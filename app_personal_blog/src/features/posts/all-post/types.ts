@@ -1,4 +1,4 @@
-export type allPostsResponse = {
+export type postsResponse = {
   id: number;
   image: string;
   text: string;

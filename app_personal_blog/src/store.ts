@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import selectedPostReducer from './features/posts/SelectedPostSlice';
+import selectedPostReducer from './features/posts/selected-post/SelectedPostSlice';
 import likeDislikeReducer from './features/posts/like-dislike/likeDislikeSlice';
 import markPostReducer from './features/posts/mark-post/markPostSlice';
 import authReducer from './features/auth/authSlice';
-import allPostReducer from './pages/all-posts-page/allPostPageSlice';
+import allPostReducer from './features/posts/all-post/allPostPageSlice';
 import createSagaMiddleware from 'redux-saga';
 import userReducer from './features/user/userSlice';
 import { rootSaga } from './sagas';

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { allPostsResponse } from './types';
+import { postsResponse } from './types';
 
 const AllPostSlice = createSlice({
   name: 'AllPost',
@@ -7,23 +7,23 @@ const AllPostSlice = createSlice({
     posts: [],
     isLoading: false,
   } as {
-    posts: allPostsResponse[];
+    posts: postsResponse[];
     isLoading: boolean;
   },
   reducers: {
-    AllPostFetch: (state) => {
+    getAllPostsFetch: (state) => {
       state.isLoading = true;
     },
-    AllPostSuccess: (state, action) => {
+    getAllPostsSuccess: (state, action) => {
       state.posts = action.payload;
       state.isLoading = false;
     },
-    AllPostFailure: (state) => {
+    getAllPostsFailure: (state) => {
       state.isLoading = false;
     },
   },
 });
 
-export const { AllPostFetch, AllPostSuccess, AllPostFailure } =
+export const { getAllPostsFetch, getAllPostsSuccess, getAllPostsFailure } =
   AllPostSlice.actions;
 export default AllPostSlice.reducer;

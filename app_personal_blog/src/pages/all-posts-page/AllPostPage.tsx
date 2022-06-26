@@ -1,17 +1,17 @@
 import style from './AllPostPage.module.css';
-import data from '../data.json';
+import data from './data.json';
 import { useEffect, useState } from 'react';
-import { Header } from '../../../features/header/Header';
-import { ContentTemplate } from '../../../templates/content/ContentTemplate';
-import { Button } from '../../../ui/button/Button';
-import { Title } from '../../../ui/title/Title';
-import { setSelectedPost } from '../../../features/posts/SelectedPostSlice';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { CardPost } from '../../../ui/card/card-post/CardPost';
-import { PostCardList } from '../../../features/posts/card-list/PostCardList';
-import { AllPostFetch } from '../allPostPageSlice';
-import { refresh } from '../../../features/auth/authSlice';
-import { getUser } from '../../../features/user/userSlice';
+import { Header } from '../../features/header/Header';
+import { ContentTemplate } from '../../templates/content/ContentTemplate';
+import { Button } from '../../ui/button/Button';
+import { Title } from '../../ui/title/Title';
+import { setSelectedPost } from '../../features/posts/selected-post/SelectedPostSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { CardPost } from '../../ui/card/card-post/CardPost';
+import { PostCardList } from '../../features/posts/card-list/PostCardList';
+import { getAllPostsFetch } from '../../features/posts/all-post/allPostPageSlice';
+import { refresh } from '../../features/auth/authSlice';
+import { getUser } from '../../features/user/userSlice';
 
 type AllPostPageProps = {};
 
@@ -29,7 +29,7 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
       setPosts(data);
     }, 1000);
     dispatch(getUser());
-    dispatch(AllPostFetch());
+    dispatch(getAllPostsFetch());
     dispatch(refresh());
   }, [dispatch]);
 

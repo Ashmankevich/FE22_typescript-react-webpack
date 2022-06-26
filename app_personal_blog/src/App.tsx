@@ -4,7 +4,7 @@ import { FirstPage } from './pages/first-page/FirstPage';
 import { LoginConfirmation } from './pages/loginConfirmation-page/LoginConfirmation';
 import { RegistrationConfirmation } from './pages/registrationConfirmation-page/RegistrationConfirmation';
 import { SelectedPostPage } from './pages/selected-post-page/SelectedPostPage';
-import { AllPostPage } from './pages/all-posts-page/ui/AllPostPage';
+import { AllPostPage } from './pages/all-posts-page/AllPostPage';
 import { InformationPage } from './pages/information-page/InformationPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppPages } from './types';
