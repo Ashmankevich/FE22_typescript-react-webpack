@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import selectedPostReducer from './features/posts/selected-post/SelectedPostSlice';
+import selectedPostReducer from './features/posts/selected-post/selectedPostSlice';
 import likeDislikeReducer from './features/posts/like-dislike/likeDislikeSlice';
 import markPostReducer from './features/posts/mark-post/markPostSlice';
 import authReducer from './features/auth/authSlice';

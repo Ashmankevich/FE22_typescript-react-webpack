@@ -3,7 +3,7 @@ import {
   getPostFetch,
   getPostSuccess,
   getPostFailure,
-} from './SelectedPostSlice';
+} from './selectedPostSlice';
 import { selectedPostFetch } from './api';
 
 export function* selectedPostSaga() {

@@ -3,10 +3,23 @@ import { Header } from '../../features/header/Header';
 import { Title } from '../../ui/title/Title';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
 import { CardPost } from '../../ui/card/card-post/CardPost';
+import { useAppSelector, useAppDispatch } from '../../hooks';
+import { useEffect } from 'react';
+import { getPostFetch } from '../../features/posts/selected-post/selectedPostSlice';
 
 type SelectedPostProps = {};
 
 export const SelectedPostPage: React.FC<SelectedPostProps> = () => {
+  const dataPosts = useAppSelector((state) => state.allPost.posts);
+  const selectedPostId = useAppSelector((state) => state.selectedPost.id);
+  const selectedPost =
+    selectedPostId != null
+      ? dataPosts.find((item) => item.id === selectedPostId)
+      : null;
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getPostFetch());
+  }, [dispatch]);
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
@@ -16,13 +29,7 @@ export const SelectedPostPage: React.FC<SelectedPostProps> = () => {
           children={undefined}
         ></ContentTemplate>
         <div className={style.row}>
-          <CardPost
-            id={1}
-            image="https://media.gq.com/photos/5abd48676fb549612f7fc48d/master/w_1600%2Cc_limit/flex-101-pink-2.jpg"
-            title="Who is this person?"
-            text="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"
-            date="22.09.2022"
-          ></CardPost>
+          {selectedPost ? <CardPost {...selectedPost}></CardPost> : null}
         </div>
       </div>
     </div>

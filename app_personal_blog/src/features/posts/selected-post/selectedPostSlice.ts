@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { postsResponse } from '../all-post/types';
 
 const SelectedPostSlice = createSlice({
   name: 'SelectedPost',
-  initialState: { id: null, isLoading: false } as {
+  initialState: { id: null, isLoading: false, allPosts: [] } as {
     id: string | null | number;
     isLoading: boolean;
+    allPosts: postsResponse[];
   },
   reducers: {
     setSelectedPost(state, action: { payload: string | number }) {

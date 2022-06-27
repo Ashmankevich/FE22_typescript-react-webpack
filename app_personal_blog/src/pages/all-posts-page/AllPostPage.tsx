@@ -5,7 +5,7 @@ import { Header } from '../../features/header/Header';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
 import { Button } from '../../ui/button/Button';
 import { Title } from '../../ui/title/Title';
-import { setSelectedPost } from '../../features/posts/selected-post/SelectedPostSlice';
+import { setSelectedPost } from '../../features/posts/selected-post/selectedPostSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { CardPost } from '../../ui/card/card-post/CardPost';
 import { PostCardList } from '../../features/posts/card-list/PostCardList';

@@ -3,10 +3,12 @@ import { UserResponse } from './types';
 
 const userSlice = createSlice({
   name: 'user',
-  initialState: {},
+  initialState: { userName: 'UserName' } as { userName: string },
   reducers: {
     getUser() {},
-    getUserSuccess(state, action: { payload: UserResponse }) {},
+    getUserSuccess(state, action: { payload: UserResponse }) {
+      state.userName = action.payload.username;
+    },
     getUserFailure(state, action: { payload: string }) {},
   },
 });
