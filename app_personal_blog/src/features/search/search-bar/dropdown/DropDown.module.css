@@ -1,0 +1,30 @@
+.ul {
+   all: unset;
+   width: 100%;
+   display: block;
+   background-color: var(--background-color);
+   border: 2px solid var(--background-color);
+   border-radius: 30px;
+   overflow: hidden;
+   box-sizing: border-box;
+}
+.li {
+   background: var(--background-color);
+   box-sizing: border-box;
+   width: calc(100% - 10px);
+   height: 40px;
+   padding: 10px;
+   margin: 5px;
+   display: flex;
+}
+
+.li + .li {
+   border-top: 1px solid var(--background-color);
+}
+
+.img {
+   object-fit: cover;
+   display: block;
+   height: 100%;
+   margin-right: 10px;
+}

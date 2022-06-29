@@ -7,6 +7,7 @@ import allPostReducer from './features/posts/all-post/allPostPageSlice';
 import createSagaMiddleware from 'redux-saga';
 import userReducer from './features/user/userSlice';
 import { rootSaga } from './sagas';
+import searchReducer from './features/search';
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -19,6 +20,7 @@ export const store = configureStore({
     auth: authReducer,
     allPost: allPostReducer,
     user: userReducer,
+    search: searchReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),

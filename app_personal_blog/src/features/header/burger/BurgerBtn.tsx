@@ -1,6 +1,5 @@
 import style from './BurgerBtn.module.css';
 import { useState } from 'react';
-import { UserButton } from '../user-button/UserButton';
 import { MenuNav } from '../menu/MenuNav';
 
 type BurgerProps = {
@@ -18,9 +17,7 @@ export const Burger: React.FC<BurgerProps> = ({ onClick }) => {
         onClick();
       }}
     >
-      <div className={style.active}>
-        <UserButton>Username</UserButton>
-      </div>
+      <div className={style.active}></div>
       <div className={isOpen ? `${style.menuOpen}` : `${style.menuClose}`}>
         <MenuNav isAuthorized={true}></MenuNav>
       </div>

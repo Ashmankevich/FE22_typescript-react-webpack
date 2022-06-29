@@ -11,12 +11,21 @@
    background-color: var(--menu-color);
 }
 
-.switсher {
-   margin: 20px 0 0 500px;
-}
-
 .text {
+   display: block;
    font-size: 20px;
    margin-left: 5px;
    color: var(--primary-text-color);
+}
+
+.row {
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.switch {
+   display: flex;
+   margin-right: 50px;
 }
