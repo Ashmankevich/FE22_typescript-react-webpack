@@ -4,7 +4,7 @@ export type SearchResponse = {
   count: number;
   next: string;
   previous: null;
-  result: Post[];
+  results: Post[];
 };
 
 export type SearchPayload = {

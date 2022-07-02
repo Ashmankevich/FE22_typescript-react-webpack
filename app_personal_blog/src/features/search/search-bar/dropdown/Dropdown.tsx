@@ -17,7 +17,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ list, onSelectedItem }) => {
           key={item.id}
           onClick={() => onSelectedItem(item.id)}
         >
-          <li className={style.li}>
+          <li className={style.li} key={item.id}>
             <img className={style.img} src={item.image} alt={item.title} />
             {item.title}
           </li>
