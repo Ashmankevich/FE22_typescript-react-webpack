@@ -1,12 +1,13 @@
 import style from './CardPost.module.css';
 
 type CardPostProps = {
-  id: number;
-  image: string | undefined;
+  id: string | number;
+  image?: string | undefined;
   text: string;
-  date: string;
+  date?: string;
   title: string;
-  onPreViewClick?: (id: number) => void;
+  onPreViewClick?: (id: string | number) => void;
+  onClick?: (id: string | number) => void;
   LikeDislike?: React.ComponentType<{ id: string | number }>;
   MarkPost?: React.ComponentType<{ id: string | number }>;
 };
@@ -21,7 +22,7 @@ export const CardPost: React.FC<CardPostProps> = ({
   MarkPost,
 }) => {
   return (
-    <div className={style.item} id={`${id}`}>
+    <div className={style.item} id={`post.${id}`}>
       <div className={style.wrapper}>
         <img className={style.img} src={image} alt="Oops! Don't worry" />
       </div>

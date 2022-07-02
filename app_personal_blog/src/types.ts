@@ -8,5 +8,5 @@ export enum AppPages {
   ACTIVATE = '/activate-page',
   REGISTRATION_FORM = '/registration-page',
   LOGIN_FORM = '/login-page',
-  POST_PAGE = 'POST_PAGE',
+  POST_PAGE = '/post-page',
 }

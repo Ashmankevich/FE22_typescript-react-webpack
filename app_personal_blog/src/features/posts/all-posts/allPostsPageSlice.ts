@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { postsResponse } from './types';
+import { Post } from '../../../types/post';
 
-const AllPostSlice = createSlice({
-  name: 'AllPost',
+const AllPostsSlice = createSlice({
+  name: 'AllPosts',
   initialState: {
-    posts: [],
+    posts: null,
     isLoading: false,
   } as {
-    posts: postsResponse[];
+    posts: Post[] | null;
     isLoading: boolean;
   },
   reducers: {
@@ -18,12 +18,13 @@ const AllPostSlice = createSlice({
       state.posts = action.payload;
       state.isLoading = false;
     },
-    getAllPostsFailure: (state) => {
+    getAllPostsFailure: (state, action) => {
       state.isLoading = false;
+      console.error('RegisterFailure', action.payload);
     },
   },
 });
 
 export const { getAllPostsFetch, getAllPostsSuccess, getAllPostsFailure } =
-  AllPostSlice.actions;
-export default AllPostSlice.reducer;
+  AllPostsSlice.actions;
+export default AllPostsSlice.reducer;

@@ -10,6 +10,7 @@ import { useAppDispatch } from '../../hooks';
 import { login } from '../../features/auth/authSlice';
 import { Input } from '../../ui/input/Input';
 import { Header } from '../../features/header/Header';
+import { getUser } from '../../features/user/userSlice';
 
 type LoginFormProps = {};
 
@@ -37,6 +38,7 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           onSubmit={(e) => {
             e.preventDefault();
             dispatch(login({ email: emailValue, password: passwordValue }));
+            dispatch(getUser());
           }}
           className={style.form}
         >

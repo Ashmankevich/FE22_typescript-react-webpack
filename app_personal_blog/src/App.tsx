@@ -12,6 +12,7 @@ import { AppContext } from './AppContext';
 import { ActivatePage } from './pages/activate-page/ActivatePage';
 import { RegistrationForm } from './pages/registration-page/RegistrationForm';
 import { LoginForm } from './pages/login-page/LoginForm';
+import { PostPage } from './pages/post-page/PostPage';
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -43,6 +44,10 @@ function App() {
             <Route
               path={AppPages.MAIN}
               element={<FirstPage></FirstPage>}
+            ></Route>
+            <Route
+              path={`${AppPages.POST_PAGE}/:id`}
+              element={<PostPage></PostPage>}
             ></Route>
             <Route
               path={AppPages.REGISTRATION_FORM}

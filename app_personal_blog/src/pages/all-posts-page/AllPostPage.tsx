@@ -1,5 +1,4 @@
 import style from './AllPostPage.module.css';
-import data from './data.json';
 import { useEffect, useState } from 'react';
 import { Header } from '../../features/header/Header';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
@@ -8,26 +7,28 @@ import { Title } from '../../ui/title/Title';
 import { setSelectedPost } from '../../features/posts/selected-post/selectedPostSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { CardPost } from '../../ui/card/card-post/CardPost';
-import { PostCardList } from '../../features/posts/card-list/PostCardList';
-import { getAllPostsFetch } from '../../features/posts/all-post/allPostPageSlice';
+import { getAllPostsFetch } from '../../features/posts/all-posts/allPostsPageSlice';
 import { refresh } from '../../features/auth/authSlice';
 import { getUser } from '../../features/user/userSlice';
+import { AllPostsList } from '../../features/posts/all-posts/posts-all-posts';
+import { Post } from '../../types/post';
 
 type AllPostPageProps = {};
 
 export const AllPostPage: React.FC<AllPostPageProps> = () => {
-  const [posts, setPosts] = useState<typeof data | null>(null);
+  const posts = useAppSelector((item) => item.allPosts.posts);
+  console.log(posts, 'all post page');
+  const getListPosts = (posts: Post[]): Post[] => {
+    return posts;
+  };
   const [popUp, setPopUp] = useState(false);
+  const dispatch = useAppDispatch();
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
       ? posts?.find((item) => item.id === selectedPostId)
       : null;
-  const dispatch = useAppDispatch();
   useEffect(() => {
-    setTimeout(() => {
-      setPosts(data);
-    }, 1000);
     dispatch(getUser());
     dispatch(getAllPostsFetch());
     dispatch(refresh());
@@ -46,12 +47,13 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
               </div>
             }
           >
-            <PostCardList
+            <AllPostsList
               onPreViewClick={(id) => {
                 dispatch(setSelectedPost(id));
                 setPopUp(true);
               }}
-            ></PostCardList>
+              posts={getListPosts(posts!)}
+            ></AllPostsList>
           </ContentTemplate>
         </div>
       </div>
