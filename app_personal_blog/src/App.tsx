@@ -14,6 +14,7 @@ import { RegistrationForm } from './pages/registration-page/RegistrationForm';
 import { LoginForm } from './pages/login-page/LoginForm';
 import { PostPage } from './pages/post-page/PostPage';
 import { AddPostPage } from './pages/add-post-page/AddPostPage';
+import { MyPostsPage } from './pages/my-posts-page/MyPostsPage';
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -49,6 +50,10 @@ function App() {
             <Route
               path={AppPages.MAIN}
               element={<FirstPage></FirstPage>}
+            ></Route>
+            <Route
+              path={AppPages.MY_POSTS_PAGE}
+              element={<MyPostsPage></MyPostsPage>}
             ></Route>
             <Route
               path={`${AppPages.POST_PAGE}/:id`}

@@ -1,4 +1,4 @@
-import style from './AllPostPage.module.css';
+import style from './MyPostPage.module.css';
 import { useEffect, useState } from 'react';
 import { Header } from '../../features/header/Header';
 import { ContentTemplate } from '../../templates/content/ContentTemplate';
@@ -7,32 +7,28 @@ import { Title } from '../../ui/title/Title';
 import { setSelectedPost } from '../../features/posts/selected-post/selectedPostSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { CardPost } from '../../ui/card/card-post/CardPost';
-import { getAllPostsFetch } from '../../features/posts/all-posts/allPostsPageSlice';
-import { refresh } from '../../features/auth/authSlice';
-import { getUser } from '../../features/user/userSlice';
-import { AllPostsList } from '../../features/posts/all-posts/posts-all-posts';
-import { Post } from '../../types/post';
 import { Link } from 'react-router-dom';
 import { AppPages } from '../../types';
+import { actions } from '../../features/posts/get-my-posts/myPostsPageSlice';
+import { MyPostsList } from '../../features/posts/get-my-posts/posts-my-posts';
+import { Post } from '../../types/post';
 
-type AllPostPageProps = {};
+type MyPostsPageProps = {};
 
-export const AllPostPage: React.FC<AllPostPageProps> = () => {
-  const posts = useAppSelector((item) => item.allPosts.posts);
-  const getListPosts = (posts: Post[]): Post[] => {
-    return posts;
+export const MyPostsPage: React.FC<MyPostsPageProps> = () => {
+  const myPosts = useAppSelector((item) => item.myPosts.myPosts);
+  const getListMyPosts = (_posts: Post[]): Post[] => {
+    return myPosts;
   };
   const [popUp, setPopUp] = useState(false);
   const dispatch = useAppDispatch();
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
-      ? posts?.find((item) => item.id === selectedPostId)
+      ? myPosts?.find((item) => item.id === selectedPostId)
       : null;
   useEffect(() => {
-    dispatch(getUser());
-    dispatch(getAllPostsFetch());
-    dispatch(refresh());
+    dispatch(actions.getMyPostsFetch);
   }, [dispatch]);
 
   return (
@@ -50,13 +46,13 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
               </div>
             }
           >
-            <AllPostsList
+            <MyPostsList
               onPreViewClick={(id) => {
                 dispatch(setSelectedPost(id));
                 setPopUp(true);
               }}
-              posts={getListPosts(posts!)}
-            ></AllPostsList>
+              myPosts={getListMyPosts(myPosts!)}
+            ></MyPostsList>
           </ContentTemplate>
         </div>
       </div>
