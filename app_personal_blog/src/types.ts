@@ -9,4 +9,5 @@ export enum AppPages {
   REGISTRATION_FORM = '/registration-page',
   LOGIN_FORM = '/login-page',
   POST_PAGE = '/post-page',
+  ADD_POST_PAGE = '/add-post-page',
 }
