@@ -1,0 +1,10 @@
+.row {
+   background: var(--background-color);
+   box-sizing: border-box;
+   width: 250px;
+   height: 40px;
+   border: 2px solid var(--background-color);
+   border-radius: 30px;
+   margin: 5px;
+   padding: 10px;
+}

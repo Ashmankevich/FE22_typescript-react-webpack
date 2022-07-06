@@ -11,6 +11,7 @@ import searchReducer from './features/search';
 import postReducer from './features/posts/post/postSlice';
 import addPostReducer from './features/posts/add-post/addPostSlice';
 import myPostsReducer from './features/posts/get-my-posts/myPostsPageSlice';
+import sortReducer from './features/sort/sortSlice';
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -27,6 +28,7 @@ export const store = configureStore({
     post: postReducer,
     addPost: addPostReducer,
     myPosts: myPostsReducer,
+    sort: sortReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),

@@ -14,6 +14,8 @@ import { AllPostsList } from '../../features/posts/all-posts/posts-all-posts';
 import { Post } from '../../types/post';
 import { Link } from 'react-router-dom';
 import { AppPages } from '../../types';
+import { SortBar } from '../../features/sort';
+import { actions } from '../../features/sort/sortSlice';
 
 type AllPostPageProps = {};
 
@@ -22,12 +24,14 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
   const getListPosts = (posts: Post[]): Post[] => {
     return posts;
   };
+  const sortedPosts = useAppSelector((state) => state.sort.response);
+  const allPosts = sortedPosts ? sortedPosts : posts;
   const [popUp, setPopUp] = useState(false);
   const dispatch = useAppDispatch();
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
-      ? posts?.find((item) => item.id === selectedPostId)
+      ? allPosts?.find((item) => item.id === selectedPostId)
       : null;
   useEffect(() => {
     dispatch(getUser());
@@ -57,6 +61,12 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
               }}
               posts={getListPosts(posts!)}
             ></AllPostsList>
+            <SortBar
+              onChange={(e) => {
+                console.log(e.currentTarget.value);
+                dispatch(actions.getSortFetch({ text: e.currentTarget.value }));
+              }}
+            ></SortBar>
           </ContentTemplate>
         </div>
       </div>
