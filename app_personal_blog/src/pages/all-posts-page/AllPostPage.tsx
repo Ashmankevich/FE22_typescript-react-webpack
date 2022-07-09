@@ -20,24 +20,24 @@ import { actions } from '../../features/sort/sortSlice';
 type AllPostPageProps = {};
 
 export const AllPostPage: React.FC<AllPostPageProps> = () => {
-  const posts = useAppSelector((item) => item.allPosts.posts);
-  const getListPosts = (posts: Post[]): Post[] => {
-    return posts;
-  };
+  const posts = useAppSelector((state) => state.allPosts.posts);
   const sortedPosts = useAppSelector((state) => state.sort.response);
-  const allPosts = sortedPosts ? sortedPosts : posts;
   const [popUp, setPopUp] = useState(false);
   const dispatch = useAppDispatch();
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
-      ? allPosts?.find((item) => item.id === selectedPostId)
+      ? posts?.find((item) => item.id === selectedPostId)
       : null;
   useEffect(() => {
     dispatch(getUser());
     dispatch(getAllPostsFetch());
     dispatch(refresh());
   }, [dispatch]);
+
+  const getListPosts = (posts: Post[]): Post[] => {
+    return posts;
+  };
 
   return (
     <div>
@@ -54,6 +54,12 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
               </div>
             }
           >
+            <SortBar
+              onChange={(e) => {
+                console.log(e.currentTarget.value);
+                dispatch(actions.getSortFetch({ text: e.currentTarget.value }));
+              }}
+            ></SortBar>
             <AllPostsList
               onPreViewClick={(id) => {
                 dispatch(setSelectedPost(id));
@@ -61,12 +67,6 @@ export const AllPostPage: React.FC<AllPostPageProps> = () => {
               }}
               posts={getListPosts(posts!)}
             ></AllPostsList>
-            <SortBar
-              onChange={(e) => {
-                console.log(e.currentTarget.value);
-                dispatch(actions.getSortFetch({ text: e.currentTarget.value }));
-              }}
-            ></SortBar>
           </ContentTemplate>
         </div>
       </div>

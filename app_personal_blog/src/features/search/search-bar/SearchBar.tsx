@@ -12,7 +12,6 @@ type SearchBarProps = {
 export const SearchBar: React.FC<SearchBarProps> = () => {
   const dispatch = useAppDispatch();
   const list = useAppSelector((state) => state.search.response?.results ?? []);
-  console.log(list);
   return (
     <div className={style.container}>
       <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
