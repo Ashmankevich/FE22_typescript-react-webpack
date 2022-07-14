@@ -12,13 +12,13 @@ export const MenuLogIn: React.FC<MenuLogInProps> = () => {
     <nav>
       <ul className={style.row}>
         <li className={style.link}>
-          <a href="All post">All posts</a>
+          <Link to={AppPages.ALL_POST}>All posts</Link>
         </li>
         <li className={style.link}>
-          <Link to={AppPages.ALL_POST}>My post</Link>
+          <Link to={AppPages.MY_POSTS_PAGE}>My post</Link>
         </li>
         <li className={style.link}>
-          <a href="Add post">Add posts</a>
+          <Link to={AppPages.ADD_POST_PAGE}>Add post</Link>
         </li>
         <li className={style.link}>
           <a href="All post">Log out</a>

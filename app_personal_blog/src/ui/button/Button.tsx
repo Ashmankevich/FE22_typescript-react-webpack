@@ -11,7 +11,7 @@ type ButtonProps = {
 export const Button: React.FC<ButtonProps> = ({
   children,
   className = '',
-  type,
+  type = 'button',
   onClick,
   role,
 }) => {

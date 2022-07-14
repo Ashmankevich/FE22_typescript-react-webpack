@@ -1,0 +1,21 @@
+.wrapper {
+   background-color: var(--background-color);
+}
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 30px;
+}
+
+.row {
+   padding-bottom: 140px;
+   max-width: 60%;
+   margin: 0 auto;
+}
+
+.post {
+   margin-top: -40px;
+   padding-top: 260px;
+   text-align: center;
+}

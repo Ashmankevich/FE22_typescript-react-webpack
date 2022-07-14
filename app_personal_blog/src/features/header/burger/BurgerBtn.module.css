@@ -10,6 +10,7 @@
 }
 
 .active {
+   display: flex;
    background-color: var(--primary-text-color);
    position: absolute;
    width: 24px;
@@ -42,34 +43,34 @@
 
 .burgerBtnOpen .active {
    background-color: transparent;
- }
+}
 
- .burgerBtnOpen .active::before {
+.burgerBtnOpen .active::before {
    transform: rotate(45deg);
    top: 0;
    width: 24px;
    transition: all 0.3s ease 0s;
    background-color: var(--burger-open-color);
- }
+}
 
- .burgerBtnOpen .active::after {
+.burgerBtnOpen .active::after {
    transform: rotate(-45deg);
    top: 0;
    transition: all 0.3s ease 0s;
    background-color: var(--burger-open-color);
- }
+}
 
 .menuOpen {
-  display: block;
-  margin-top: 10px;
-  transition: all 0.3s ease 0s;
-  background-color: var(--menu-color);
-  width: 100%;
-  font-size: 22px;
-  position: fixed;
-  left: 0;
-  z-index: 20;
+   display: block;
+   margin-top: 10px;
+   transition: all 0.3s ease 0s;
+   background-color: var(--menu-color);
+   width: 100%;
+   font-size: 22px;
+   position: fixed;
+   left: 0;
+   z-index: 20;
 }
 .menuClose {
-  display: none;
+   display: none;
 }

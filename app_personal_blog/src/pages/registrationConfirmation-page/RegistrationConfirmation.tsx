@@ -26,7 +26,7 @@ export const RegistrationConfirmation: React.FC<
           <span className={style.text}>Please, check your email</span>
         </p>
       </AuthorizationTemplate>
-      <Link to={AppPages.LOGIN}>
+      <Link to={AppPages.LOGIN_FORM}>
         <Button className={style.button} role="presentation">
           Home
         </Button>

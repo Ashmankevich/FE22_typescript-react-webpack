@@ -11,10 +11,10 @@ export const MenuLogOut: React.FC<MenuLogOutProps> = () => {
     <nav>
       <ul className={style.row}>
         <li className={style.link}>
-          <Link to={AppPages.LOGIN}>Login</Link>
+          <Link to={AppPages.LOGIN_FORM}>Login</Link>
         </li>
         <li className={style.link}>
-          <Link to={AppPages.REGISTRATION}>Registration</Link>
+          <Link to={AppPages.REGISTRATION_FORM}>Registration</Link>
         </li>
       </ul>
     </nav>

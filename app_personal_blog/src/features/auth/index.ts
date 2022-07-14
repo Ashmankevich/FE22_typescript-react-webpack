@@ -1,10 +1,20 @@
+import { all } from 'typed-redux-saga';
 import {
   activateSaga,
   loginSaga,
   loginSuccessSaga,
+  refreshSaga,
+  refreshSuccessSaga,
   registerSaga,
 } from './authSagas';
 
 export function* authSagas() {
-  yield [registerSaga(), activateSaga(), loginSuccessSaga(), loginSaga()];
+  yield all([
+    registerSaga(),
+    activateSaga(),
+    loginSuccessSaga(),
+    loginSaga(),
+    refreshSaga(),
+    refreshSuccessSaga(),
+  ]);
 }

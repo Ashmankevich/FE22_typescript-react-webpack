@@ -1,0 +1,8 @@
+.wrapper {
+   background-color: var(--background-color);
+   padding: 40px 0;
+}
+
+.row {
+   padding-top: 40px;
+}

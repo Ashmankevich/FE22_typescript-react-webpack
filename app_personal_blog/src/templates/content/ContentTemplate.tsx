@@ -2,7 +2,7 @@ import style from './ContentTemplate.module.css';
 import { Title } from '../../ui/title/Title';
 
 type ContentTemplateProps = {
-  title: React.ReactNode;
+  title?: React.ReactNode;
   children: React.ReactNode;
 };
 
