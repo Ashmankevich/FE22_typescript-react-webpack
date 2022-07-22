@@ -1,0 +1,59 @@
+.wrapper {
+   display: block;
+   max-width: 352px;
+   width: 100%;
+   margin: 0 auto;
+   position: relative;
+   bottom: 0;
+   border-radius: 5px;
+   background: #b0bbcf;
+   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+   transition: 0.3s linear;
+}
+
+.wrapper:hover {
+   position: relative;
+   bottom: 15px;
+}
+
+.link {
+   display: flex;
+   flex-direction: column;
+}
+
+.pic {
+   max-width: 226px;
+   width: 100%;
+   margin: 0 63px;
+}
+
+.title {
+   font-size: 24px;
+   font-weight: 700;
+   line-height: 32px;
+   color: #313037;
+   overflow: hidden;
+   height: 64px;
+   margin-bottom: 15px;
+   padding: 0 10px;
+}
+
+.subtitle {
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 24px;
+   color: #a8a8a8;
+   margin-bottom: 40px;
+   padding: 0 10px;
+}
+
+.price {
+   font-size: 24px;
+   font-weight: 700;
+   line-height: 32px;
+   color: #313037;
+   align-content: flex-end;
+   margin-top: auto;
+   padding: 0 10px 10px;
+}

@@ -11,4 +11,5 @@ export enum AppPages {
   REGISTRATION_CONFIRMATION = '/registration-confirmation-page',
   REGISTRATION_FORM = '/registration-page',
   SELECTED_POST = '/selected-post-page',
+  HOME = '/home',
 }

@@ -15,6 +15,7 @@ import { LoginForm } from './pages/login-page/LoginForm';
 import { PostPage } from './pages/post-page/PostPage';
 import { AddPostPage } from './pages/add-post-page/AddPostPage';
 import { MyPostsPage } from './pages/my-posts-page/MyPostsPage';
+import { Home } from './pages/home-page/Home';
 
 function App() {
   const appRef = React.createRef<HTMLDivElement>();
@@ -31,6 +32,7 @@ function App() {
               path={AppPages.ALL_POST}
               element={<AllPostPage></AllPostPage>}
             ></Route>
+            <Route path={AppPages.HOME} element={<Home></Home>}></Route>
             <Route
               path={AppPages.ADD_POST_PAGE}
               element={<AddPostPage></AddPostPage>}
