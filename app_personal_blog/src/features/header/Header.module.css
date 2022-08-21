@@ -29,3 +29,76 @@
    display: flex;
    margin-right: 50px;
 }
+
+.root {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 120px;
+   height: 50px;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+.root .inputToggle {
+   display: none;
+}
+
+.root .slider {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   overflow: hidden;
+   background-color: #e74a42;
+   border-radius: 50px;
+   cursor: pointer;
+   -webkit-transition: all 1.4s;
+   transition: all 1.4s;
+}
+
+.root .slider:before,
+.root .slider:after {
+   content: "";
+   position: absolute;
+   bottom: 5px;
+   left: 5px;
+   width: 40px;
+   height: 40px;
+   background-color: #ffffff;
+   border-radius: 30px;
+}
+
+.root .slider:before,
+.root .slider:after {
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+}
+
+.root .wave {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 120px;
+   height: 50px;
+   border-radius: 40px;
+   -webkit-transition: all 1.4s;
+   transition: all 1.4s;
+}
+
+.root .inputToggle:checked + .slider {
+   background-color: transparent;
+}
+
+.root .inputToggle:checked + .slider:before,
+.root .inputToggle:checked + .slider:after {
+   -webkit-transform: translateX(70px);
+   transform: translateX(70px);
+}
+
+.root .inputToggle:checked ~ .wave {
+   display: block;
+   background-color: #3398d9;
+}

@@ -21,30 +21,35 @@ export const Header: React.FC = () => {
       <div className={style.row}>
         <UserButton>{username}</UserButton>
         <SearchBar></SearchBar>
-        <div className={style.switch}>
-          <input
-            className={style.switсher}
-            type="checkbox"
-            onChange={(event) => {
-              const style = appRef?.current!.style!;
-              if (event.target.checked) {
-                style.setProperty('--primary-text-color', 'white');
-                style.setProperty(
-                  '--background-color',
-                  'var(--ds-background-color)'
-                );
-                style.setProperty(
-                  '--btn-background-color',
-                  'var(--ds-btn-background-color)'
-                );
-              } else {
-                style.removeProperty('--primary-text-color');
-                style.removeProperty('--background-color');
-                style.removeProperty('--btn-background-color');
-              }
-            }}
-          />
-          <span className={style.text}>Switch Theme</span>
+        <div className={style.root}>
+          <label className={style.switch} htmlFor="toggler">
+            <input
+              className={style.inputToggle}
+              id="toggler"
+              type="checkbox"
+              onChange={(event) => {
+                const style = appRef?.current!.style!;
+                if (event.target.checked) {
+                  style.setProperty('--primary-text-color', 'white');
+                  style.setProperty(
+                    '--background-color',
+                    'var(--ds-background-color)'
+                  );
+                  style.setProperty(
+                    '--btn-background-color',
+                    'var(--ds-btn-background-color)'
+                  );
+                } else {
+                  style.removeProperty('--primary-text-color');
+                  style.removeProperty('--background-color');
+                  style.removeProperty('--btn-background-color');
+                }
+              }}
+              readOnly
+            />
+            <span className={style.slider} />
+            <span className={style.wave} />
+          </label>
         </div>
       </div>
     </header>
